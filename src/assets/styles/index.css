@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Oceanwide';
+  src: url('../fonts/oceanwide-cufonfonts/Oceanwide-Semibold.otf'), format('opentype');
+}
+
+body {
+  font-family: 'Oceanwide', sans-serif;
+  background-color: #000000;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+#nav{
+  font-family: 'Oceanwide', sans-serif;
+
+}
+
+
+
+.gradient {
+  overflow: hidden;
+  border-radius: 7px;
+
+}
+
+.gradient2 {
+  border-width: 4px;
+  border-radius: 5px;
+  /* Set the width of the border */
+  border-style: solid;
+  /* Ensure the border has a style */
+  border-image: linear-gradient(to right, #FF0000, #FF9500, #EBE410, #2BFF01, #12E2E9, #1100FF, #D400FF) 1;
+  /* Apply gradient and specify border width */
+}
+
+.gradient4 {
+  border-width: 1px;
+  /* Set the width of the border */
+  border-style: solid;
+  /* Ensure the border has a style */
+  border-image: linear-gradient(to right, #FF0000, #FF9500, #EBE410, #2BFF01, #12E2E9, #1100FF, #D400FF) 1;
+  /* Apply gradient and specify border width */
+}
+
+.gradient3 {
+  border-bottom-width: 2px;
+  /* Set the width of the border */
+  border-style: solid;
+  /* Ensure the border has a style */
+  border-image: linear-gradient(to right, #FF0000, #FF9500, #EBE410, #2BFF01, #12E2E9, #1100FF, #D400FF) 1;
+  /* Apply gradient and specify border width */
+}
+
+.popup {
+
+  display: none;
+  transition: opacity 2s ease, display 2s ease;
+}
+
+.show {
+  transition: opacity 2s ease, display 2s ease;
+  width: 100%;
+  height: full;
+  display: fixed;
+}
+
+.hidden {
+
+  display: none;
+}
