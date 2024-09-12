@@ -8,7 +8,6 @@ interface ILayout {
 
 const Layout: React.FC<ILayout> = ({ children }) => {
   const [loading, setLoading] = useState<boolean>(true);
-
   React.useEffect(() => {
     setLoading(false);
   }, []);
@@ -21,7 +20,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
         </div>
       ) : (
         <div
-          className=" xl:bg-[#EDF3F5] lg:bg-none sm:bg-none md:bg-none
+          className=" 
          tracking-wide flex flex-col items-center "
         >
           <Navbar />
