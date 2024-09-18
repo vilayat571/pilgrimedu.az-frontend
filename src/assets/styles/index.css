@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Oceanwide';
-  src: url('../fonts/oceanwide-cufonfonts/Oceanwide-Semibold.otf') format('opentype');
+  font-family: "Oceanwide";
+  src: url("../fonts/oceanwide-cufonfonts/Oceanwide-Semibold.otf")
+    format("opentype");
 }
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
 }
 
 body {
-  font-family: 'Oceanwide', sans-serif;
+  font-family: "Oceanwide", sans-serif;
   background-color: #000000;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -28,21 +28,28 @@ body {
 }
 
 #nav {
-  font-family: 'Oceanwide', sans-serif;
+  font-family: "Oceanwide", sans-serif;
 }
 
 #scholarship {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-#name{
-  font-family: 'Oceanwide';
+#formDiv {
+  font-family: "Poppins", sans-serif;
+}
+
+#bloqlar {
+  font-family: "Poppins", sans-serif;
+}
+
+#name {
+  font-family: "Oceanwide";
 }
 
 .gradient {
   overflow: hidden;
   border-radius: 7px;
-
 }
 
 .gradient2 {
@@ -51,7 +58,17 @@ body {
   /* Set the width of the border */
   border-style: solid;
   /* Ensure the border has a style */
-  border-image: linear-gradient(to right, #FF0000, #FF9500, #EBE410, #2BFF01, #12E2E9, #1100FF, #D400FF) 1;
+  border-image: linear-gradient(
+      to right,
+      #ff0000,
+      #ff9500,
+      #ebe410,
+      #2bff01,
+      #12e2e9,
+      #1100ff,
+      #d400ff
+    )
+    1;
   /* Apply gradient and specify border width */
 }
 
@@ -60,7 +77,17 @@ body {
   /* Set the width of the border */
   border-style: solid;
   /* Ensure the border has a style */
-  border-image: linear-gradient(to right, #FF0000, #FF9500, #EBE410, #2BFF01, #12E2E9, #1100FF, #D400FF) 1;
+  border-image: linear-gradient(
+      to right,
+      #ff0000,
+      #ff9500,
+      #ebe410,
+      #2bff01,
+      #12e2e9,
+      #1100ff,
+      #d400ff
+    )
+    1;
   /* Apply gradient and specify border width */
 }
 
@@ -69,12 +96,21 @@ body {
   /* Set the width of the border */
   border-style: solid;
   /* Ensure the border has a style */
-  border-image: linear-gradient(to right, #FF0000, #FF9500, #EBE410, #2BFF01, #12E2E9, #1100FF, #D400FF) 1;
+  border-image: linear-gradient(
+      to right,
+      #ff0000,
+      #ff9500,
+      #ebe410,
+      #2bff01,
+      #12e2e9,
+      #1100ff,
+      #d400ff
+    )
+    1;
   /* Apply gradient and specify border width */
 }
 
 .popup {
-
   display: none;
   transition: opacity 2s ease, display 2s ease;
 }
@@ -87,6 +123,5 @@ body {
 }
 
 .hidden {
-
   display: none;
 }

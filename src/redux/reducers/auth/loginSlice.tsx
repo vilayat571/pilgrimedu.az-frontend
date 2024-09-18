@@ -15,8 +15,10 @@ const initialState: IInitialStateLogin = {
 
 export const loginFormSender = createAsyncThunk(
   "/loginFormSender",
-  async (loginForm: ILoginForm ) => {
-    const url = `${process.env.REACT_API_URL}/api/v1/users/login`;
+  async (loginForm: ILoginForm) => {
+
+    console.log(loginForm)
+    const url = `http://localhost:3001/api/v1/users/login`;
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
@@ -30,7 +32,9 @@ export const loginFormSender = createAsyncThunk(
       body: JSON.stringify(loginForm), // body data type must match "Content-Type" header
     });
 
-    return response.json();
+    const data = await response.json();
+
+    return data;
   }
 );
 

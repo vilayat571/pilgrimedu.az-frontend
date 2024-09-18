@@ -33,7 +33,7 @@ const Blogs = () => {
 
   return (
     <Layout>
-      <div className="w-full h-auto justify-center flex items-center flex-col  py-20">
+      <div id="bloqlar" className="w-full h-auto bg-[#16022C] justify-center flex items-center flex-col  py-20">
         {loading ? (
           <div className="w-full flex items-center justify-center">
             <img src="https://cdn.pixabay.com/animation/2023/08/15/07/22/07-22-02-443_512.gif"
