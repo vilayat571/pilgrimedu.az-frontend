@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: 'Oceanwide';
-  src: url('../fonts/oceanwide-cufonfonts/Oceanwide-Semibold.otf'), format('opentype');
+  src: url('../fonts/oceanwide-cufonfonts/Oceanwide-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype');
 }
 
 body {
@@ -12,7 +18,6 @@ body {
   background-color: #000000;
   overflow-x: hidden;
   scroll-behavior: smooth;
-
 }
 
 * {
@@ -22,12 +27,17 @@ body {
   scroll-behavior: smooth;
 }
 
-#nav{
+#nav {
   font-family: 'Oceanwide', sans-serif;
-
 }
 
+#scholarship {
+  font-family: 'Poppins', sans-serif;
+}
 
+#name{
+  font-family: 'Oceanwide';
+}
 
 .gradient {
   overflow: hidden;

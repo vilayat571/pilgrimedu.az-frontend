@@ -27,7 +27,7 @@ function Navbar() {
           {navhrefs.map((link) => {
             return (
               <a
-                key={link.id}
+                key={Math.random()}
                 aria-label="The ancor tag to redirect Whatsapp account of Pilgrim MMC"
                 className="text-white"
                 href={link.hrefs}

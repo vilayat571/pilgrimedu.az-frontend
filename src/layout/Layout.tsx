@@ -19,10 +19,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
           Loading
         </div>
       ) : (
-        <div
-          className=" 
-         tracking-wide flex flex-col items-center "
-        >
+        <div className="tracking-wide flex flex-col items-center">
           <Navbar />
           {children}
           <Footer />

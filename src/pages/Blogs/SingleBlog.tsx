@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Layout from "../../layout/Layout";
 import { IBlog } from "../../redux/reducers/Blogs/getAllBlogs";
 import { useNavigate, useParams } from "react-router-dom";
@@ -8,56 +8,63 @@ const SingleBlog = () => {
 
   const { id } = useParams();
 
-  const url = `${import.meta.env.VITE_API_URL}/blogs/${id}`;
+  const url = `http://localhost:3001/api/v1/blogs/${id}`;
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setNewBlog(data.blog));
-  }, []);
+  }, [url]);
 
   const navigate = useNavigate();
 
+
+  console.log(newBlog?.thumbnail)
+
   return (
     <Layout>
-      <div className="flex flex-col border xl:w-3/5 lg:w-full md:w-full sm:w-full  py-12">
-        <div className="flex flex-col items-start w-full ">
-          <button
-            className="text-[17px] mb-4 mt-6"
-            onClick={() => navigate(-1)}
-          >
-            {"<"} Geri dönün
-          </button>
-          <p
-            id="blog"
-            className="text-[18px] text-black mb-2 mt-4 flex items-center gap-4 "
-          >
-            <span>{newBlog?.date}</span>
-            <span>{newBlog?.author}</span>
-          </p>
-          <p className="text-3xl text-black ">{newBlog?.title}</p>
-        </div>
-{newBlog?.thumbnail}
-        <img
-          src={newBlog?.thumbnail}
-          className="my-12 rounded-md object-cover"
-          alt={`the thumbnail of blog about ${newBlog?.title}`}
-        />
-        <div className="flex flex-col px-4">
-          <p className="text-2xl mb-4">{newBlog?.description}</p>
+      <div className="flex flex-col w-full items-center justify-center  py-12">
+        <div className="flex flex-col w-4/5 pz-2 justify-center items-center">
+          <div className="flex flex-col mb-12 items-start w-full ">
+            <button
+              className="text-[17px] mb-4 text-white mt-6"
+              onClick={() => navigate(-1)}
+            >
+              {"<"} Geri dönün
+            </button>
+            <p
+              id="blog"
+              className="text-[18px] text-[#fff] mb-2 mt-4 flex items-center gap-4 "
+            >
+              <span>{newBlog?.date}</span>
+              <span>{newBlog?.author}</span>
+            </p>
+            <p className="text-3xl text-[#fff] ">{newBlog?.title}</p>
+          </div>
 
-          <div
-            dangerouslySetInnerHTML={{ __html: newBlog?.body || '' }}
-            className=" text-black"
-          />
-        </div>
-        <div className="flex items-start  mx-6 mt-6">
-          <button
-            className="text-[17px] mb-4 mt-6 bg-black text-white px-6 py-3"
-            onClick={() => navigate(-1)}
-          >
-            Geri dönün
-          </button>
+          <div>
+            <img
+              src={newBlog?.thumbnail}
+              className=" rounded-md object-cover w-full h-auto"
+              alt={`the thumbnail of blog about ${newBlog?.title}`}
+            />
+
+            <p className="text-2xl mb-4 text-justify">{newBlog?.description}</p>
+
+            <div
+              dangerouslySetInnerHTML={{ __html: newBlog?.body || "" }}
+              className=" text-[#fff] text-justify"
+            />
+
+            <div className="flex items-start mt-12 ">
+              <button
+                className="text-[17px] mb-4  bg-[#6F2EB6] rounded text-white px-6 py-3"
+                onClick={() => navigate(-1)}
+              >
+                Geri dönün
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

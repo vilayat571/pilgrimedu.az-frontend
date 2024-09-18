@@ -66,7 +66,7 @@ const FAAQ = () => {
     <div
       className=" xl:w-4/5 lg:w-full md:w-full sm:w-full 
       flex justify-center items-center py-20  bg-[#000] 
-    xl:px-20 lg:px-20 md:px-10 sm:px-2"
+    px-2"
     >
       <div className="grid xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1  w-full ">
         <div className="col-span-1 xl:pl-0 md:pl-12 sm:pl-12 lg:pl-0">

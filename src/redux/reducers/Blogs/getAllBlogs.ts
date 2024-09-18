@@ -24,8 +24,9 @@ const initialState: IInitialStateAllBlogs = {
 
 export const fetchBlogs = createAsyncThunk(
   "/fetchData",
-  async ({ limit, query }: { limit: number | undefined; query: string }) => {
-    const url = `${import.meta.env.VITE_API_URL}/blogs/?skip=0&limit=${limit}&title=${query}`;
+  async ({ limit }: { limit: number | undefined; }) => {
+    const url = `http://localhost:3001/api/v1/blogs/?skip=0&limit=${limit}`
+    console.log(limit)
 
     return fetch(url)
       .then((res) => res.json())
