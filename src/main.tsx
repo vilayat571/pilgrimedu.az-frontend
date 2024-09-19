@@ -13,6 +13,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./redux/store/store.ts";
 import { HelmetProvider } from "react-helmet-async";
+import MainPage from "./pages/Dashboard/MainPage.tsx";
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <HelmetProvider>
@@ -27,6 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/bloqlar/:id" element={<SingleBlog />} />
           <Route path="/shifreyenile" element={<ResetPass />} />
           <Route path="/shifreyenile/:id" element={<NewPass />} />
+          <Route path={`/istifadechihesabı`} element={<MainPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

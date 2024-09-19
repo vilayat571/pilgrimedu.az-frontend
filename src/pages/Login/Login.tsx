@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Logo from "../../atoms/Auth/Logo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/store/store";
 import { loginFormSender } from "../../redux/reducers/auth/loginSlice";
 import bgCover from "../../assets/images/iconCover.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export interface ILoginForm {
   email: string;
@@ -20,28 +22,110 @@ const Login = () => {
     setLoginForm({ ...loginForm, [e.target.id]: e.target.value });
   };
 
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const handleSubmit = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent> | React.FormEvent<HTMLFormElement>
+    e:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+      | React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-  
+
+    if (loginForm.email.length == 0 || loginForm.password.length == 0) {
+      toast("Məlumatları tam doldurun!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: true,
+        pauseOnHover: true,
+        progress: undefined,
+        style: {
+          backgroundColor: "red", // Custom background color
+          color: "white",
+          borderRadius: "3px",
+          fontFamily: "Poppins",
+        },
+      });
+      return;
+    }
+
     if (loginForm.email.length < 8) {
-      alert("E-poçt adresinizi doğru qeyd edin!");
+      toast("E-poçt adresinizi doğru qeyd edin!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: true,
+        pauseOnHover: true,
+        progress: undefined,
+        style: {
+          backgroundColor: "red", // Custom background color
+          color: "white",
+          borderRadius: "3px",
+          fontFamily: "Poppins",
+        },
+      });
       return;
     }
-  
+
     if (loginForm.password.length < 8) {
-      alert("Şifrənin uzunluğu 8 simvoldan kiçik ola bilməz!");
+      toast("Şifrənin uzunluğu 8 simvoldan kiçik ola bilməz!", {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: true,
+        pauseOnHover: true,
+        progress: undefined,
+        style: {
+          backgroundColor: "red", // Custom background color
+          color: "white",
+          borderRadius: "3px",
+          fontFamily: "Poppins",
+        },
+      });
       return;
     }
-  
+
     if (loginForm.password.length >= 8 && loginForm.email.length >= 8) {
-      dispatch(loginFormSender(loginForm)).then((ans) => console.log(ans.payload));
+      dispatch(loginFormSender(loginForm)).then((ans) => {
+        if (ans.payload.status == "OK") {
+          toast(ans.payload.message, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: true,
+            pauseOnHover: true,
+            progress: undefined,
+            style: {
+              backgroundColor: "#4bb543", // Custom background color
+              color: "white",
+              borderRadius: "3px",
+              fontFamily: "Poppins",
+            },
+          });
+          localStorage.setItem("token", ans.payload.token);
+          localStorage.setItem("user", JSON.stringify(ans.payload.user));
+          setLoginForm({ email: "", password: "" });
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
+          return;
+        } else {
+          toast(ans.payload.message, {
+            position: "top-right",
+            autoClose: 2500,
+            hideProgressBar: true,
+            pauseOnHover: true,
+            progress: undefined,
+            style: {
+              backgroundColor: "red", // Custom background color
+              color: "white",
+              borderRadius: "3px",
+              fontFamily: "Poppins",
+            },
+          });
+        }
+      });
     }
   };
-  
+
+  const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false);
 
   return (
     <div
@@ -49,6 +133,7 @@ const Login = () => {
       className="flex justify-center items-center bg-[#16022C] w-full 
      h-screen "
     >
+      <ToastContainer />
       <div className="absolute top-0 left-0 w-full h-screen flex items-center justify-center">
         <img
           src={bgCover}
@@ -62,7 +147,7 @@ const Login = () => {
         <form
           onSubmit={(e) => handleSubmit(e)}
           id="formLogin"
-          className="lg:w-2/5 z-10  xl:w-1/3 md:w-7/10 sm:w-11/12 flex flex-col items-center mt-6"
+          className="lg:w-2/5 z-10 xl:w-1/3 md:w-7/10 sm:w-11/12 flex flex-col items-center mt-6"
         >
           <input
             id="email"
@@ -82,8 +167,16 @@ const Login = () => {
              placeholder:text-[#000] indent-3 tracking-wide outline-none focus:outline-none mt-6"
             placeholder="Şifrəniz.."
             required={true}
-            type="text"
+            type={isVisiblePassword ? "text" : "password"}
           />
+          <p className="text-white w-full mt-4 z-10 text-base flex text-left ">
+            <input
+              type="checkbox"
+              className="mr-3"
+              onClick={() => setIsVisiblePassword(!isVisiblePassword)}
+            />
+            Şifrəni göstər
+          </p>
           <div className="flex flex-col items-center gap-2 tracking-wider">
             <button
               onClick={(e) => handleSubmit(e)}
@@ -92,7 +185,7 @@ const Login = () => {
             >
               Daxil ol
             </button>
-            <p className="text-lg mt-6">
+            <p className="text-base mt-1">
               <span className="text-[#fff]">Hesabınız yoxdur?</span>
               <Link to="/hesabac">
                 <u className="text-white"> Hesab aç</u>
@@ -107,5 +200,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
