@@ -1,14 +1,13 @@
 export const navhrefs = [
-  {
-    id: 1,
-    hrefs: "/",
-    text: "Biz kimik",
-  },
+
   {
     id: 2,
-    hrefs: "/",
+    hrefs: "/#neticelerimiz",
     text: "Nəticələrimiz",
   },
+];
+
+export const navhrefs2 = [
   {
     id: 3,
     hrefs: "/teqaudler",
@@ -19,5 +18,4 @@ export const navhrefs = [
     hrefs: "/bloqlar",
     text: "Bloqlar",
   },
-
 ];

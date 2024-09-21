@@ -49,7 +49,7 @@ const SingleBlog = () => {
               alt={`the thumbnail of blog about ${newBlog?.title}`}
             />
 
-            <p className="text-2xl mb-4 text-justify">{newBlog?.description}</p>
+            <p className="text-xl w-4/5 mt-12 mb-4 text-justify text-white">{newBlog?.description}</p>
 
             <div
               dangerouslySetInnerHTML={{ __html: newBlog?.body || "" }}
@@ -58,7 +58,7 @@ const SingleBlog = () => {
 
             <div className="flex items-start mt-12 ">
               <button
-                className="text-[17px] mb-4  bg-[#6F2EB6] rounded text-white px-6 py-3"
+                className="text-[17px] mb-4  bg-[#6F2EB6] rounded text-[#d8d7d7] px-6 py-3"
                 onClick={() => navigate(-1)}
               >
                 Geri dönün

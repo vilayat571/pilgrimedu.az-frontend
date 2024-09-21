@@ -17,7 +17,7 @@ const Blogs = () => {
 
   const [blogs, setBlogs] = useState<IInitialStateAllBlogs["blogs"]>(null);
 
-  const [limit, setLimit] = useState<number>(1);
+  const [limit, setLimit] = useState<number>(6);
 
   const [query, setQuery] = useState<string>("");
 
@@ -33,59 +33,51 @@ const Blogs = () => {
 
   return (
     <Layout>
-      <div id="bloqlar" className="w-full h-auto bg-[#16022C] justify-center flex items-center flex-col  py-20">
-        {loading ? (
-          <div className="w-full flex items-center justify-center">
-            <img src="https://cdn.pixabay.com/animation/2023/08/15/07/22/07-22-02-443_512.gif"
-            className=""
-            alt="" />
-          </div>
-        ) : (
-          <>
-            <BlogsTitle />
+      <div
+        id="bloqlar"
+        className="w-full h-auto bg-[#16022C] justify-center flex items-center flex-col  py-20"
+      >
+        <BlogsTitle />
 
-            <SearchInput query={query} setQuery={setQuery} />
+        <SearchInput query={query} setQuery={setQuery} />
 
-
-            <div className="w-4/5 flex items-center justify-center ">
-              <div
-                className="grid gap-x-5 gap-y-10 
+        <div className="w-4/5 flex items-center justify-center ">
+          <div
+            className="grid gap-x-5 gap-y-10 
   xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 
   tracking-wider"
-              >
-                {blogs?.length == 0 ? (
-                  <p className="text-center w-full col-span-3">
-                    <span className="text-[#fff] text-3xl block">
-                      Üzür istəyirik
-                    </span>
-                    <span className="text-[#8D8D8D] text-3xl block">
-                      axtarışa uyğun nəticə tapılmadı!
-                    </span>
-                    <button
-                      className="text-black bg-[#fff] text-base px-6 rounded py-3  mt-3"
-                      onClick={() => setQuery("")}
-                    >
-                      Yenilə
-                    </button>
-                  </p>
-                ) : (
-                  <BlogsShow loading={loading} blogs={fileteredBlogs} />
-                )}
-              </div>
-            </div>
-
-            <div className="flex w-full justify-center items-center mt-12">
-              {blogs?.length != 0 && (
+          >
+            {blogs?.length == 0 ? (
+              <p className="text-center w-full col-span-3">
+                <span className="text-[#fff] text-3xl block">
+                  Üzür istəyirik
+                </span>
+                <span className="text-[#8D8D8D] text-3xl block">
+                  axtarışa uyğun nəticə tapılmadı!
+                </span>
                 <button
-                  onClick={() => setLimit(limit + 1)}
-                  className="text-white bg-[#6F2EB6] w-auto text-[15px] px-6 rounded py-4  mt-3"
+                  className="text-black bg-[#fff] text-base px-6 rounded py-3  mt-3"
+                  onClick={() => setQuery("")}
                 >
-                  Daha çox göstər!
+                  Yenilə
                 </button>
-              )}
-            </div>
-          </>
-        )}
+              </p>
+            ) : (
+              <BlogsShow loading={loading} blogs={fileteredBlogs} />
+            )}
+          </div>
+        </div>
+
+        <div className="flex w-full justify-center items-center mt-12">
+          {blogs?.length != 0 && (
+            <button
+              onClick={() => setLimit(limit + 1)}
+              className="text-white bg-[#6F2EB6] w-auto text-[15px] px-6 rounded py-4  mt-3"
+            >
+              Daha çox göstər!
+            </button>
+          )}
+        </div>
       </div>
     </Layout>
   );

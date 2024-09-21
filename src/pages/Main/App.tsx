@@ -3,8 +3,21 @@ import Cover from "../../atoms/Main/Cover";
 import "../../assets/styles/index.css";
 import BodyOfMain from "../../components/Main/BodyOfMain";
 import SEO from "../../modules/SEO";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#neticelerimiz") {
+      const resultsSection = document.getElementById("neticelerimiz");
+      if (resultsSection) {
+        resultsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <Layout>
       <SEO

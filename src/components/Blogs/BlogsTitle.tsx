@@ -4,7 +4,7 @@ const BlogsTitle = () => {
       <span className="text-[#fff] text-5xl block">
         Yenilikləri izləmək üçün
       </span>
-      <span className="text-[#ededed] text-5xl block">bizimlə qalın!</span>
+      <span className="text-[#6F2EB5] text-5xl block">bizimlə qalın!</span>
     </p>
   );
 };
