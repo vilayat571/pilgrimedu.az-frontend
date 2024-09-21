@@ -25,7 +25,7 @@ const BlogsShow: React.FC<{
                   className=" object-cover w-[440px] h-[300px] rounded-xl"
                   alt={`the image of ${blog.title}`}
                 />
-                <div className="flex flex-col  w-[440px] h-auto ">
+                <div className="flex flex-col  w-[440px]  xl:px-2 md:px-4 sm:px-6 lg:px-2 h-auto ">
                   <p
                     id="blog"
                     className=" flex items-center gap-10 mt-4 mb-2  text-[17px] text-[#fff] font-thin "

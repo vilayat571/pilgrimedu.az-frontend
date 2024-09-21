@@ -64,7 +64,7 @@ const FAAQ = () => {
 
   return (
     <div
-      className=" xl:w-4/5 lg:w-full md:w-full sm:w-full 
+      className=" xl:w-4/5  xl:px-0 lg:px-20 md:px-4 sm:px-0 lg:w-full md:w-full sm:w-full 
       flex justify-center items-center py-20  bg-[#000] 
     px-2"
     >
@@ -125,4 +125,5 @@ const FAAQ = () => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default FAAQ;

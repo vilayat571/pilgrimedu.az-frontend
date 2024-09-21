@@ -81,27 +81,66 @@ const Scholarships = () => {
     <Layout>
       <div className="w-full flex bg-[#16022C] items-center justify-center">
         <InnerLayoutSc>
-          {/* 
-          <div className={data != null ? styles.close : styles.open}>
-          </div> */}
+          <div
+            className={`
+              ${
+                data != null ? styles.open : styles.close
+              } flex items-center justify-center`}
+          >
+            <div className="bg-white w-auto h-auto gap-y-2 flex flex-col rounded px-10 py-10 ">
+              <p className="text-lg">
+                <span className="font-black">Adı : </span>
+                {data?.name}
+              </p>
+              <p>
+                <span className="font-black">Ölkə : </span>
+                {data?.country}, {data?.region}
+              </p>
+              <p>
+                <span className="font-black">Tipi : </span>
+                {data?.type}
+              </p>
+              <p className="flex">
+                <span className="font-black ">Haqqında : </span>
+                {data?.description}
+              </p>
+              <p>
+                <span className="font-black">Təhsil pilləsi : </span>
+                {data?.degree}
+              </p>
+              <p>
+                <span className="font-black">Son müraciət tarixi : </span>
+                {data?.deadline}
+              </p>
+              <button
+                onClick={() => setData(null)}
+                className=" px-4 w-20 py-3 mt-3 bg-[#8515ff] text-white rounded text-sm"
+              >
+                Bağla
+              </button>
+            </div>
+          </div>
 
           <TitleScholarships />
 
           <SearchInput query={query} setQuery={setQuery} />
 
-          <div className="flex gap-x-5 mt-1 mb-6 w-full  items-start">
-            {optionsDegree.map((option) => {
-              return (
-                <button
-                  className="text-white rounded bg-[#7924d3] px-4 py-3 "
-                  key={option.id}
-                  onClick={() => filterData(option.value)}
-                >
-                  {option.value}
-                </button>
-              );
-            })}
+          <div className="flex items-center justify-center">
+            <div className="flex flex-row gap-x-5 mt-1 mb-6 overflow-auto items-start">
+              {optionsDegree.map((option) => {
+                return (
+                  <button
+                    className="text-white inline rounded bg-[#7924d3] px-4 py-3 whitespace-nowrap "
+                    key={option.id}
+                    onClick={() => filterData(option.value)}
+                  >
+                    {option.value}
+                  </button>
+                );
+              })}
+            </div>
           </div>
+
           <ShowScholarships data={filteredScholarships} setData={setData} />
 
           <div className="w-full flex items-center justify-center mt-12">

@@ -26,14 +26,14 @@ const Threeblogs = () => {
 
   return (
     <div
-      className=" xl:w-4/5 lg:w-full md:w-full sm:w-full 
+      className=" xl:w-4/5  xl:px-0 lg:px-20 md:px-4 sm:px-5 lg:w-full md:w-full sm:w-full 
     flex flex-col justify-center items-start py-20  bg-[#000] 
   px-2"
     >
       <div className="w-full flex items-center mb-10 justify-center">
       <BlogsTitle />
       </div>
-      <div className="grid xl:grid-cols-3 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 gap-6 w-full">
+      <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-y-20 gap-6 w-full">
         <BlogsShow loading={loading} blogs={blogs} />
       </div>
       <div className="flex w-full items-center justify-center mt-20 ">

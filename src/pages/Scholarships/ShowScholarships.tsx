@@ -6,7 +6,8 @@ const ShowScholarships: React.FC<{
   setData: React.Dispatch<React.SetStateAction<IScholarship | null>>;
 }> = ({ data, setData }) => {
   return (
-    <div className="grid grid-cols-3 mt-4 gap-4">
+    <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1
+     mt-4 gap-4">
       {data?.map((scholarship: IScholarship) => {
         return (
           <div className="col-span-1 text-base  px-5 py-5 rounded bg-white text-black flex flex-col gap-2 items-start">

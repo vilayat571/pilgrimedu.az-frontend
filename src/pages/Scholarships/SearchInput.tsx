@@ -6,12 +6,13 @@ const SearchInput: React.FC<{
   setQuery: React.Dispatch<React.SetStateAction<string>>;
 }> = ({ query, setQuery }) => {
   return (
-    <form className="flex w-full justify-center items-center mt-12 mb-12">
+    <form className="flex w-full justify-center items-center xl:mt-12 lg:mt-12 md:mt-12 sm:mt-6
+     xl:mb-12 lg:mb-10 sm:mb-6 md:mb-8">
       <input
         id="blogs"
         placeholder="Açar söz daxil edin.."
         value={query}
-        className="h-16 indent-5 outline-none placeholder:text-[#5e5e5e] rounded-lt-md tracking-wider w-2/4 "
+        className="h-16 indent-5 outline-none placeholder:text-[#5e5e5e] rounded-lt-md tracking-wider xl:w-2/4 lg:w-2/4 md:w-2/4 sm:w-full rounded-l "
         onChange={(e) => setQuery(e.target.value)}
         type="text"
       />
