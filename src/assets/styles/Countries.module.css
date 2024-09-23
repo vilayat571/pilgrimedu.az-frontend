@@ -1,0 +1,80 @@
+
+.gradient1 {
+  border-width: 6px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #1100ff, #0008ff) 1;
+  animation: borderGradientAnimation2 1s ease infinite;
+}
+
+.gradient2 {
+  border-width: 6px;
+  border-radius: 15px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to right,
+      #ff0000,
+      #ff9500,
+      #ebe410,
+      #2bff01,
+      #12e2e9,
+      #1100ff,
+      #d400ff
+    )
+    1;
+  animation: borderGradientAnimation 1s ease infinite;
+}
+
+@keyframes borderGradientAnimation {
+  0% {
+    border-image-source: linear-gradient(
+      to right,
+      #ff0000,
+      #ff9500,
+      #ebe410,
+      #2bff01,
+      #12e2e9,
+      #1100ff,
+      #d400ff,
+      50
+    );
+  }
+  50% {
+    border-image-source: linear-gradient(
+      to left,
+      #ff0000,
+      #ff9500,
+      #ebe410,
+      #2bff01,
+      #12e2e9,
+      #1100ff,
+      #d400ff
+    );
+  }
+  100% {
+    border-image-source: linear-gradient(
+      to right,
+      #ff0000,
+      #ff9500,
+      #ebe410,
+      #2bff01,
+      #12e2e9,
+      #1100ff,
+      #d400ff
+    );
+  }
+}
+
+@keyframes borderGradientAnimation2 {
+  0% {
+    border-image-source: linear-gradient(to right, #1100ff, 50);
+    border-radius: 15px;
+  }
+  50% {
+    border-image-source: linear-gradient(to left, #1100ff, #0008ff);
+    border-radius: 15px;
+
+  }
+  100% {
+    border-image-source: linear-gradient(to right, #1100ff, #0008ff);
+  }
+}

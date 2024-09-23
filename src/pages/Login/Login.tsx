@@ -140,7 +140,7 @@ const Login = () => {
           alt="The cover image of Login page of Pilgrim MMC"
           className="object-cover relative right-12"
         />
-      </div>{" "}
+      </div>
       <div className="flex flex-col items-center w-full">
         <Logo />
 
@@ -191,7 +191,7 @@ const Login = () => {
                 <u className="text-white"> Hesab aç</u>
               </Link>
             </p>
-            <Link to="/shifreyenile" className="text-white">
+            <Link to="/shifreyenile" className="text-white underline">
               Şifrəmi unutdum
             </Link>
           </div>
