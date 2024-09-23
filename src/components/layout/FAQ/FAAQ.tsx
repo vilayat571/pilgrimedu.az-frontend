@@ -1,8 +1,5 @@
 import { useState } from "react";
 import faaq from "../../../assets/images/faqcover.png";
-import plus from "../../../assets/images/plus.png";
-import minus from "../../../assets/images/minus.png";
-
 import { IFAAQ } from "../../../modules/faq";
 import { questions } from "../../../modules/questions";
 
@@ -23,7 +20,7 @@ const FAAQ = () => {
   return (
     <div
       className="w-full 
-      flex justify-between border items-center py-20  bg-[#000]"
+      flex justify-between  items-center py-20  bg-[#000]"
     >
       <div className="grid xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1  w-full ">
         <div className="col-span-1 xl:pl-0 md:pl-12 sm:pl-12 lg:pl-0">
@@ -47,26 +44,23 @@ const FAAQ = () => {
             {data.map((item: IFAAQ) => {
               return (
                 <div
+                onClick={() => changeMode(item.id)}
+
                   key={item.id}
-                  className="xl:px-8 lg:px-8 md:px-4 sm:px-3 py-5 flex flex-col  items-center rounded-lg 
-                  text-left w-full bg-white border mb-2"
+                  className="xl:px-8 group lg:px-8 md:px-4  hover:bg-[#6F2EB5] cursor-pointer hover:text-white transition duration-300 sm:px-3 py-5 flex flex-col  items-center rounded-lg 
+                  text-left w-full bg-white  mb-2"
                 >
                   <div className="flex flex-row items-center justify-between w-full">
                     <span> {item.title} </span>
 
-                    <img
-                      id="img"
-                      src={!item.status ? plus : minus}
-                      onClick={() => changeMode(item.id)}
-                      className={`w-8 h-8 
-                      object-cover
-                      cursor-pointer
-                      flex justify-center items-center text-lg rounded-full bg-[black] text-white`}
-                    />
+                  <button className="bg-black group-hover:bg-white text-white group-hover:text-black w-9 h-9 
+                  transition duration-300 text-xl rounded-full">
+                {!item.status ? '+' : '-'}
+                  </button>
                   </div>
 
                   <div
-                    className={`text-black w-full overflow-hidden transition-all duration-700 ${
+                    className={`group-hover:text-white text-black w-full overflow-hidden transition-all duration-700 ${
                       item.status ? "max-h-screen mt-3" : "max-h-0"
                     }`}
                   >

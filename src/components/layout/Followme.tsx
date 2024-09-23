@@ -30,7 +30,8 @@ xl:flex-row lg:flex-row md:flex-col sm:flex-col
               href="https://www.instagram.com/pilgrimedu_az/"
               target="blank"
               aria-label="The link to redirect Pilgrim MMC instagram account"
-              className="text-white flex justify-center items-center rounded cursor-pointer px-8 bg-[#6f2eb7] 
+              className="text-white flex justify-center items-center rounded cursor-pointer px-8 bg-[#6f2eb7]
+                hover:bg-white hover:text-black transition duration-300
         ml-3"
             >
               İzlə

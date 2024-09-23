@@ -13,7 +13,7 @@ const InnerDiv1 = () => {
       <Fourkeys />
       <ATag
         href="#neticelerimiz"
-        style="w-28 text-center tracking-wider text-white bg-[#6f2eb7] px-3 mt-5 py-3 rounded"
+        style="w-28 text-center hover:bg-white hover:text-black transition duration-200 tracking-wider text-white bg-[#6f2eb7] px-3 mt-5 py-3 rounded"
         text="Ətraflı"
         label="Pilgrim MMC - nin nəticələri"
       />

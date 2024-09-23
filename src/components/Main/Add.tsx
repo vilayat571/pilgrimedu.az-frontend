@@ -1,10 +1,11 @@
 import plane from "../../assets/images/plane.png";
+import ATag from "../../atoms/Layout/ATag";
 
 const Add = () => {
   return (
-    <div className="gradient w-full flex items-center justify-center">
+    <div className="gradient w-full flex items-center justify-center rounded-2xl">
       <div
-        className="flex gradient2 px-4 flex-col justify-center py-16 rounded-3xl items-center 
+        className="flex gradient2 px-4  flex-col justify-center py-16 rounded-t-2xl rounded-b-2xl items-center 
  mb-16 bg-[#210442]
   "
       >
@@ -29,12 +30,18 @@ const Add = () => {
               bilərsən. Bunun üçün isə sadəcə 4 addım var…
             </p>
 
-            <p className="text-white flex flex-col gap-4 mt-6">
+            <p className="text-white flex flex-col gap-4 mt-6 mb-10">
               <span>1. Bizə yaz</span>
               <span>2. Ödənişsiz konsultasiyamızdan yararlan</span>
               <span>3. Göstəricilərinə və istəyinə uyğun müəssisələr seç</span>
               <span>4. Müqaviləni bağla və qəbul məktubunu əldə et</span>
             </p>
+            <ATag
+              href="#elaqe"
+              style="w-28 text-center hover:bg-white hover:text-black transition duration-200 tracking-wider text-white bg-[#6f2eb7] px-3 mt-5 py-3 rounded"
+              text="Bizə yaz"
+              label="Pilgrim MMC - nin nəticələri"
+            />
           </div>
 
           <div className="col-span-1">

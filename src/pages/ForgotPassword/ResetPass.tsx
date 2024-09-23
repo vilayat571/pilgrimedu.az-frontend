@@ -56,8 +56,7 @@ const ResetPass = () => {
 
           <div className="flex flex-col items-center gap-2 tracking-wider">
             <button
-              className="bg-white text-black rounded
-        w-28 text-center px-6 mt-7 py-3 "
+              className="text-white px-6 py-3 rounded bg-[#000] hover:bg-[#6F2EB5] hover:text-white transition duration-300 mt-7 w-28 "
             >
               Göndər
             </button>

@@ -31,7 +31,7 @@ const BlogsShow: React.FC<{
                 </p>
                 <Link
                   to={`/bloqlar/${blog._id}`}
-                  className="text-center w-28 px-3 py-3 rounded bg-[#6F2EB6] text-[15px] text-white mt-4"
+                  className="text-center w-28 px-3 py-3 rounded hover:bg-white hover:text-black transition duration-200 bg-[#6F2EB6] text-[15px] text-white mt-4"
                 >
                   Ardını oxu
                 </Link>

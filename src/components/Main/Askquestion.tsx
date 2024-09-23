@@ -74,7 +74,7 @@ const Askquestion = () => {
       });
       return;
     }
-    if (form.phone.length <10) {
+    if (form.phone.length < 10) {
       toast("Nömrəni düzgün yazın və boşluq buraxmayın!", {
         position: "top-right",
         autoClose: 5000,
@@ -190,7 +190,7 @@ const Askquestion = () => {
               value={form.question}
             />
 
-            <button className="text-white px-6 py-3 rounded bg-[#0E0517]">
+            <button className="text-white px-6 py-3 rounded bg-[#000] hover:bg-[#6F2EB5] hover:text-white transition duration-300">
               Göndər
             </button>
           </form>

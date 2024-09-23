@@ -2,17 +2,18 @@ import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Loqo from "../../../atoms/Layout/Loqo";
-import { navhrefs } from "../../../modules/navrefs";
+import { IIHrefs } from "../../../modules/navrefs";
 
 // eslint-disable-next-line react-refresh/only-export-components
 const Sidebar = ({
+  hrefs,
   mode,
   setMode,
 }: {
   mode: boolean;
   setMode: (mode: boolean) => void;
+  hrefs: IIHrefs[];
 }) => {
-
   return (
     <>
       {" "}
@@ -44,8 +45,11 @@ w-full h-screen z-10 bg-[#210442] xl:px-0 lg:px-20 md:px-4 sm:px-0 pt-4 text-whi
               />
             </div>
           </div>
-          <div onClick={() => setMode(false)} className="flex flex-col gap-y-2 pl-4 mt-6">
-            {navhrefs.map((link) => {
+          <div
+            onClick={() => setMode(false)}
+            className="flex flex-col gap-y-2 pl-4 mt-6"
+          >
+            {hrefs.map((link: IIHrefs) => {
               return (
                 <a
                   key={link.id}

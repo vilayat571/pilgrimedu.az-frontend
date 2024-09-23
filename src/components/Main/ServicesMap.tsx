@@ -29,7 +29,7 @@ const ServicesMap = ({
                 onClick={() => {
                   setData(service);
                 }}
-                className="bg-[#6f2eb7] px-4 py-2 text-white text-sm mt-6 rounded tracking-wide"
+                className="bg-[#6f2eb7] hover:bg-white hover:text-black transition duration-200 px-4 py-2 text-white text-sm mt-6 rounded tracking-wide"
               >
                 Tam bax
                 <FontAwesomeIcon icon={faExpand} className="ml-2" />

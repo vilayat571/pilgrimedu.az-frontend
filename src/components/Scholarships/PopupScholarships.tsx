@@ -40,7 +40,7 @@ const PopupScholarships: React.FC<{
         </p>
         <button
           onClick={() => setData(null)}
-          className=" px-4 w-20 py-3 mt-3 bg-[#8515ff] text-white rounded text-sm"
+          className=" px-4 w-20 py-3 mt-3 bg-[#8515ff] text-white rounded text-sm hover:bg-white hover:text-black transition duration-200"
         >
           Bağla
         </button>

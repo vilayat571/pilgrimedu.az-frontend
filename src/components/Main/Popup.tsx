@@ -35,7 +35,7 @@ const Popup = ({
         </p>
         <button
           onClick={() => setData(null)}
-          className="bg-[#6f2eb7] px-4 py-2 text-white cursor-pointer text-sm mt-6 rounded tracking-wide "
+          className="bg-[#6f2eb7] px-4 hover:bg-white hover:text-black transition duration-200 py-2 text-white cursor-pointer text-sm mt-6 rounded tracking-wide "
         >
           Bağla
           <FontAwesomeIcon icon={faMinimize} className="ml-2" />

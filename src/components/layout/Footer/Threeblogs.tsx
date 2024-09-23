@@ -4,14 +4,12 @@ import {
   fetchBlogs,
   IInitialStateAllBlogs,
 } from "../../../redux/reducers/Blogs/getAllBlogs";
-import { useAppDispatch, useAppSelector } from "../../../redux/store/store";
+import { useAppDispatch } from "../../../redux/store/store";
 import { useNavigate } from "react-router-dom";
 import BlogsTitle from "../../Blogs/BlogsTitle";
 
 const Threeblogs = () => {
   const dispatch = useAppDispatch();
-
-  const loading = useAppSelector((state) => state.getAllBlogs.loading);
 
   const [blogs, setBlogs] = useState<IInitialStateAllBlogs["blogs"]>(null);
 
@@ -31,14 +29,14 @@ const Threeblogs = () => {
   "
     >
       <div className="w-full flex items-center mb-10 justify-center">
-      <BlogsTitle />
+        <BlogsTitle />
       </div>
       <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-y-20 gap-6 w-full">
-        <BlogsShow loading={loading} blogs={blogs} />
+        <BlogsShow blogs={blogs} />
       </div>
       <div className="flex w-full items-center justify-center mt-20 ">
         <button
-          className="bg-[#6F2EB5] text-base px-5 py-3 rounded text-white"
+          className="bg-[#6F2EB5] text-base hover:bg-white hover:text-black transition duration-200 px-5 py-3 rounded text-white"
           onClick={() => navigate("/bloqlar")}
         >
           Hamısını gör {">"}

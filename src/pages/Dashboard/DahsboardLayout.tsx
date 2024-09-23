@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Loqo from "../../atoms/Layout/Loqo";
-import { navhrefs } from "../../modules/navrefs";
+import { pagesRefs } from "../../modules/navrefs";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ const DahsboardLayout = ({ children }: { children: ReactNode }) => {
       >
         <Loqo />
         <div id="links" className="flex flex-col gap-y-4 text-lg mt-8 ">
-          {navhrefs.map((link) => {
+          {pagesRefs.map((link) => {
             return (
               <a
                 key={link.id}

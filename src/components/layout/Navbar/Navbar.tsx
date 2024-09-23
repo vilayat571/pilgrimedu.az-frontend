@@ -1,21 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import Loqo from "../../../atoms/Layout/Loqo";
-import { navhrefs, navhrefs2 } from "../../../modules/navrefs";
+import { homeHrefs, IIHrefs, pagesRefs } from "../../../modules/navrefs";
 import Btnconsultasiya from "../../../atoms/Layout/Btnconsultasiya";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [mode, setMode] = useState<boolean>(false);
 
-  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
-  const handleNavigationToResults = () => {
-    navigate("/"); // Navigate to home page
-    setTimeout(() => {
-      window.location.hash = "#neticelerimiz"; // Set the hash after navigation
-    }, 0);
-  };
+  const [hrefs, setHrefs] = useState<IIHrefs[]>(homeHrefs);
+
+  useEffect(() => {
+    if (pathname == "/") {
+      setHrefs(homeHrefs);
+    } else {
+      setHrefs(pagesRefs);
+    }
+  }, [setHrefs, pathname]);
 
   return (
     <div
@@ -29,38 +32,34 @@ function Navbar() {
       >
         <Loqo />
 
-        <Sidebar mode={mode} setMode={setMode} />
+        <Sidebar hrefs={hrefs} mode={mode} setMode={setMode} />
 
         <div
           className="
         xl:flex lg:flex md:hidden sm:hidden
-      flex-row gap-6 text-base tracking-wide"
+      flex-row gap-2 text-base tracking-wide"
         >
-          {navhrefs.map((link) => {
-            return (
+          {hrefs.map((link: IIHrefs, index) =>
+            hrefs.length > 3 ? (
               <a
-                key={link.id}
+                key={index}
                 aria-label="The ancor tag to redirect Whatsapp account of Pilgrim MMC"
-                className="text-white cursor-pointer"
-                onClick={() => handleNavigationToResults()}
+                className="text-white hover:bg-white hover:text-black transition duration-200 px-4 py-2 rounded"
+                href={link.hrefs}
               >
                 {link.text}
               </a>
-            );
-          })}
-          {navhrefs2.map((link) => {
-            return (
+            ) : (
               <Link
-                key={Math.random()}
-                onClick={() => handleNavigationToResults()}
+                key={index}
                 aria-label="The ancor tag to redirect Whatsapp account of Pilgrim MMC"
-                className="text-white"
+                className="text-white hover:bg-white hover:text-black transition duration-200 px-4 py-2 rounded"
                 to={link.hrefs}
               >
                 {link.text}
               </Link>
-            );
-          })}
+            )
+          )}
         </div>
 
         <div

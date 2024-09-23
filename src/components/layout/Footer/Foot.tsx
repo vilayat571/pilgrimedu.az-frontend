@@ -1,8 +1,9 @@
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { navhrefs } from "../../../modules/navrefs";
+import { homeHrefs, pagesRefs } from "../../../modules/navrefs";
 import { services } from "../../../modules/services";
 import ToTop from "../../../atoms/Footer/ToTop";
+import { Link } from "react-router-dom";
 
 function Foot() {
   return (
@@ -35,12 +36,24 @@ function Foot() {
           <div>
             <p className="text-xl font-semibold">Saytda mövcud səhifələr</p>
             <div id="links" className="flex flex-col gap-y-2 mt-4 ">
-              {navhrefs.map((link) => {
+              {pagesRefs.map((link) => {
+                return (
+                  <Link
+                    key={link.id}
+                    aria-label="The ancor tag to redirect Whatsapp account of Pilgrim MMC"
+                    className="text-white hover:underline block"
+                    to={link.hrefs}
+                  >
+                    {link.text}
+                  </Link>
+                );
+              })}
+              {homeHrefs.map((link) => {
                 return (
                   <a
                     key={link.id}
                     aria-label="The ancor tag to redirect Whatsapp account of Pilgrim MMC"
-                    className="text-white block"
+                    className="text-white hover:underline block"
                     href={link.hrefs}
                   >
                     {link.text}
@@ -60,7 +73,7 @@ function Foot() {
                   aria-label="Pilgrim EDU MMC xidmətinə aparan link"
                   href="#xidmetlerimiz"
                   key={service.id}
-                  className="block"
+                  className="block hover:underline"
                 >
                   {service.title}
                 </a>
@@ -75,7 +88,7 @@ function Foot() {
       <ToTop />
 
       <div className="mb-6">
-        <p className="text-left">Made with 💜 by PilgrimEdu : Version 1.0</p>
+        <p className="text-left">Made with 💜 by PilgrimEdu : Version 1.</p>
       </div>
     </main>
   );
