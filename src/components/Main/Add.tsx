@@ -3,7 +3,9 @@ import ATag from "../../atoms/Layout/ATag";
 
 const Add = () => {
   return (
-    <div className="gradient w-full flex items-center justify-center rounded-2xl">
+    <div 
+    data-aos="fade-up"
+    className="gradient w-full flex items-center justify-center rounded-2xl">
       <div
         className="flex gradient2 px-4  flex-col justify-center py-16 rounded-t-2xl rounded-b-2xl items-center 
  mb-16 bg-[#210442]

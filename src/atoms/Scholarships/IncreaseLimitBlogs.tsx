@@ -1,11 +1,11 @@
 import React from "react";
-import { IScholarship } from "../../pages/Scholarships/Scholarships";
+import { IBlog } from "../../redux/reducers/Blogs/getAllBlogs";
 
 const IncreaseLimit: React.FC<{
   setLimit: React.Dispatch<React.SetStateAction<number>>;
   limit: number;
-  holeData: IScholarship[] | null; // Changed to IBlog[]
-  filteredData: IScholarship[] | undefined; // Changed to IBlog[]
+  holeData: IBlog[] | null | undefined; // Accepting IBlog[] | null | undefined
+  filteredData: IBlog[] | undefined; // Accepting IBlog[] | undefined
 }> = ({ setLimit, limit, holeData, filteredData }) => {
   const isDataExhausted = holeData?.length === filteredData?.length;
 
