@@ -9,6 +9,7 @@ const Aboutus = () => {
       transition={{ type: "spring", stiffness: 100 }}
     >
       <div
+      
         id="haqqımızda"
         className="
         xl:px-0 lg:px-28 md:px-12 sm:px-3 py-16
