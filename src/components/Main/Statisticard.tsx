@@ -8,7 +8,7 @@ const Statisticard: React.FC<Statistic> = ({ icon, value, label, color }) => {
   return (
     <div className="col-span-1 mx-auto p
     xl:w-full md:w-full sm:w-full lg:w-full
-     bg-[#210442] rounded-xl xl:px-8 lg:px-8 md:px-2 sm:px-6
+     bg-[#210442] rounded-xl xl:px-8 lg:px-8 md:px-2 sm:px-3
     
     xl:py-12 lg:py-12 md:py-12 sm:py-12 flex justify-center items-center">
       <div className="flex flex-row items-center justify-center  sm:justify-between gap-8 w-full">

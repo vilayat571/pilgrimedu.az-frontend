@@ -12,8 +12,8 @@ function Footer() {
   return (
     <div className="flex bg-[#000] items-center justify-center flex-col">
       {pathname != "/bloqlar" && <Threeblogs />}
-      <FAAQ />
       <FooterLayout>
+        <FAAQ />
         <Followme />
         <Askquestion />
         <Foot />

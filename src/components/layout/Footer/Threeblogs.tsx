@@ -26,9 +26,9 @@ const Threeblogs = () => {
 
   return (
     <div
-      className=" xl:w-4/5  xl:px-0 lg:px-20 md:px-4 sm:px-5 lg:w-full md:w-full sm:w-full 
+      className=" xl:w-4/5  xl:px-0 lg:px-20 md:px-4 sm:px-3 lg:w-full md:w-full sm:w-full 
     flex flex-col justify-center items-start py-20  bg-[#000] 
-  px-2"
+  "
     >
       <div className="w-full flex items-center mb-10 justify-center">
       <BlogsTitle />

@@ -12,7 +12,7 @@ const SearchInput: React.FC<{
         id="blogs"
         placeholder="Açar söz daxil edin.."
         value={query}
-        className="h-16 indent-5 outline-none placeholder:text-[#5e5e5e] rounded-lt-md tracking-wider xl:w-2/4 lg:w-2/4 md:w-2/4 sm:w-full rounded-l "
+        className="h-16 indent-5 outline-none placeholder:text-[#5e5e5e] rounded-lt-md tracking-wider xl:w-2/5 lg:w-2/4 md:w-2/4 sm:w-full rounded-l "
         onChange={(e) => setQuery(e.target.value)}
         type="text"
       />

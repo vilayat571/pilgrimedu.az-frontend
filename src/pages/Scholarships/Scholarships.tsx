@@ -4,7 +4,10 @@ import TitleScholarships from "../../components/Scholarships/TitleScholarships";
 import SearchInput from "./SearchInput";
 import ShowScholarships from "./ShowScholarships";
 import InnerLayoutSc from "./InnerLayoutSc";
-import styles from "../../assets/styles/PopupSc.module.css";
+import SEO from "../../modules/SEO";
+import PopupScholarships from "../../components/Scholarships/PopupScholarships";
+import Options from "../../components/Scholarships/Options";
+import IncreaeLimit from "../../atoms/Scholarships/IncreaeLimit";
 
 export interface IScholarship {
   _id: string;
@@ -22,6 +25,15 @@ const Scholarships = () => {
   const [query, setQuery] = useState("");
   const [scholarships, setScholarships] = useState<IScholarship[] | null>(null);
   const [region, setRegion] = useState<string | null>("Hamısı");
+  const [holeData, setHoleData] = useState<IScholarship[] | null>(null);
+  React.useEffect(() => {
+    const url = "http://localhost:3001/api/v1/scholarships";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setHoleData(data.scholarships));
+  }, [setHoleData]);
+
+  console.log(holeData)
 
   React.useEffect(() => {
     const url =
@@ -42,117 +54,32 @@ const Scholarships = () => {
       .includes(query.toLowerCase());
   });
 
-  const optionsDegree = [
-    {
-      id: 0,
-      value: "Hamısı",
-    },
-    {
-      id: 1,
-      value: "Avropa",
-    },
-    {
-      id: 2,
-      value: "Asiya",
-    },
-    {
-      id: 3,
-      value: "Rusiya və postsovet ölkələri",
-    },
-    {
-      id: 4,
-      value: "Amerika və Kanada",
-    },
-    {
-      id: 5,
-      value: "İngiltərə",
-    },
-    {
-      id: 6,
-      value: "Türkiyə və İslam ölkələri",
-    },
-  ];
-
   const filterData = (value: string) => {
     setRegion(value);
   };
 
   return (
     <Layout>
-      <div className="w-full flex bg-[#16022C] items-center justify-center">
-        <InnerLayoutSc>
-          <div
-            className={`
-              ${
-                data != null ? styles.open : styles.close
-              } flex items-center justify-center`}
-          >
-            <div className="bg-white w-auto h-auto gap-y-2 flex flex-col rounded px-10 py-10 ">
-              <p className="text-lg">
-                <span className="font-black">Adı : </span>
-                {data?.name}
-              </p>
-              <p>
-                <span className="font-black">Ölkə : </span>
-                {data?.country}, {data?.region}
-              </p>
-              <p>
-                <span className="font-black">Tipi : </span>
-                {data?.type}
-              </p>
-              <p className="flex">
-                <span className="font-black ">Haqqında : </span>
-                {data?.description}
-              </p>
-              <p>
-                <span className="font-black">Təhsil pilləsi : </span>
-                {data?.degree}
-              </p>
-              <p>
-                <span className="font-black">Son müraciət tarixi : </span>
-                {data?.deadline}
-              </p>
-              <button
-                onClick={() => setData(null)}
-                className=" px-4 w-20 py-3 mt-3 bg-[#8515ff] text-white rounded text-sm"
-              >
-                Bağla
-              </button>
-            </div>
-          </div>
-
-          <TitleScholarships />
-
-          <SearchInput query={query} setQuery={setQuery} />
-
-          <div className="flex items-center justify-center">
-            <div className="flex flex-row gap-x-5 mt-1 mb-6 overflow-auto items-start">
-              {optionsDegree.map((option) => {
-                return (
-                  <button
-                    className="text-white inline rounded bg-[#7924d3] px-4 py-3 whitespace-nowrap "
-                    key={option.id}
-                    onClick={() => filterData(option.value)}
-                  >
-                    {option.value}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          <ShowScholarships data={filteredScholarships} setData={setData} />
-
-          <div className="w-full flex items-center justify-center mt-12">
-            <button
-              onClick={() => setLimit(limit + 6)}
-              className="text-white rounded bg-[#7924d3] px-4 py-3 "
-            >
-              Daha çox göstər
-            </button>
-          </div>
-        </InnerLayoutSc>
-      </div>
+      <SEO
+        title="Pilgrim Edu - Xaricdə təhsil | Ana səhifə"
+        description="Biz Pilgrim Education olaraq xaricdə təhsil, peşə-seçimi və xaricdə iş xidmətlərini təqdim edən və peşəkar komandadan ibarət olan bir Mərkəzik."
+        name="Pilgrim Education"
+        type="website"
+        keywords="Xaricdə təhsil (Образование за границей), Study abroad (Обучение за границей), Xaricdə təhsil proqramları (Программы обучения за границей), Учеба за границей (Study abroad), Стипендии за границей (Scholarships abroad), Təqaüdlər (Стипендии), Xarici universitetlər (Иностранные университеты), Admission process (Процесс поступления), Peşə seçimi (Выбор профессии), Образовательные курсы (Educational courses), Xaricdə bakalavr (Бакалавриат за границей), Master’s programs abroad (Магистратура за границей), Xaricdə doktorantura (Докторантура за границей), Learning languages abroad (Изучение языков за границей), Xaricdə dil kursları (Языковые курсы за границей), Student visa (Студенческая виза), Təhsil vizası (Виза для обучения), Living costs abroad (Стоимость жизни за границей), Xaricdə yaşayış xərcləri (Расходы на жизнь за границей), University rankings (Рейтинги университетов), Xaricdə universitet reytinqləri (Рейтинги вузов за границей), Education consultants (Образовательные консультанты), Təhsil məsləhətçiləri (Консультанты по образованию), Application tips (Советы по подаче заявлений), Xaricdə müraciət məsləhətləri (Советы по подаче заявлений за границей), Cultural exchange (Культурный обмен), Mədəniyyət mübadiləsi (Культурный обмен), International students (Международные студенты), Beynəlxalq tələbələr (Международные студенты), Study destinations (Направления для учебы), Təhsil məqsədli yerlər (Направления для учебы), Scholarships for Azerbaijani students (Стипендии для азербайджанских студентов), Azərbaycan tələbələri üçün təqaüdlər (Стипендии для студентов из Азербайджана), Online courses (Онлайн курсы), Onlayn kurslar (Онлайн курсы), Internship programs (Программы стажировок), Staj proqramları (Программы стажировок), Student life abroad (Студенческая жизнь за границей), Xaricdə tələbə həyatı (Студенческая жизнь за границей), Work while studying (Работа во время учебы), Təhsil zamanı iş (Работа во время учебы), Educational fairs (Образовательные ярмарки), Təhsil sərgiləri (Образовательные выставки), Networking opportunities (Возможности для налаживания контактов), Şəbəkələşmə imkanları (Возможности для налаживания контактов), Post-study work visa (Виза для работы после учебы), Təhsildən sonra vizası (Виза для работы после учебы), Tips for adapting (Советы по адаптации), Uyğunlaşma üçün məsləhətlər (Советы по адаптации), Future career opportunities (Будущие карьерные возможности)."
+      />
+      <InnerLayoutSc>
+        <PopupScholarships data={data} setData={setData} />
+        <TitleScholarships />
+        <SearchInput query={query} setQuery={setQuery} />
+        <Options filterData={filterData} />
+        <ShowScholarships data={filteredScholarships} setData={setData} />
+        <IncreaeLimit
+          holeData={holeData}
+          filteredData={filteredScholarships}
+          limit={limit}
+          setLimit={setLimit}
+        />
+      </InnerLayoutSc>
     </Layout>
   );
 };

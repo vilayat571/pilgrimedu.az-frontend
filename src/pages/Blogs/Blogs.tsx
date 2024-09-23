@@ -5,21 +5,28 @@ import {
   IBlog,
   IInitialStateAllBlogs,
 } from "../../redux/reducers/Blogs/getAllBlogs";
-import { useAppDispatch, useAppSelector } from "../../redux/store/store";
+import { useAppDispatch } from "../../redux/store/store";
 import BlogsTitle from "../../components/Blogs/BlogsTitle";
 import BlogsShow from "../../components/Blogs/BlogsShow";
 import SearchInput from "../Scholarships/SearchInput";
+import IncreaeLimit from "../../atoms/Scholarships/IncreaeLimit";
 
 const Blogs = () => {
   const dispatch = useAppDispatch();
 
-  const loading = useAppSelector((state) => state.getAllBlogs.loading);
-
   const [blogs, setBlogs] = useState<IInitialStateAllBlogs["blogs"]>(null);
-
-  const [limit, setLimit] = useState<number>(6);
+  const [holeData, setHoleData] = useState<IBlog | null>(null);
+  const [limit, setLimit] = useState<number>(2);
 
   const [query, setQuery] = useState<string>("");
+
+  React.useEffect(() => {
+    const url = "http://localhost:3001/api/v1/blogs/";
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setHoleData(data.blogs));
+  }, [setHoleData]);
 
   React.useEffect(() => {
     dispatch(fetchBlogs({ limit })).then((data) =>
@@ -31,23 +38,25 @@ const Blogs = () => {
     return blog.title.toLowerCase().includes(query.toLowerCase());
   });
 
+
+  console.log(holeData)
+
   return (
     <Layout>
       <div
         id="bloqlar"
-        className="w-full h-auto bg-[#16022C] justify-center flex items-center flex-col  py-20"
+        className="w-full h-auto bg-[#16022C] justify-center flex items-center xl:px-0 lg:px-20 md:px-4 sm:px-3 flex-col  py-20"
       >
         <BlogsTitle />
+        <div className="flex  flex-col items-center justify-center ">
+          <SearchInput query={query} setQuery={setQuery} />
 
-        <SearchInput query={query} setQuery={setQuery} />
-
-        <div className="w-4/5 flex items-center justify-center ">
           <div
-            className="grid gap-x-5 gap-y-10 
+            className="grid gap-x-5  gap-y-16
   xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 
   tracking-wider"
           >
-            {blogs?.length == 0 ? (
+            {fileteredBlogs?.length == 0 ? (
               <p className="text-center w-full col-span-3">
                 <span className="text-[#fff] text-3xl block">
                   Üzür istəyirik
@@ -63,21 +72,17 @@ const Blogs = () => {
                 </button>
               </p>
             ) : (
-              <BlogsShow loading={loading} blogs={fileteredBlogs} />
+              <BlogsShow blogs={fileteredBlogs} />
             )}
           </div>
         </div>
 
-        <div className="flex w-full justify-center items-center mt-12">
-          {blogs?.length != 0 && (
-            <button
-              onClick={() => setLimit(limit + 1)}
-              className="text-white bg-[#6F2EB6] w-auto text-[15px] px-6 rounded py-4  mt-3"
-            >
-              Daha çox göstər!
-            </button>
-          )}
-        </div>
+        <IncreaeLimit
+          holeData={holeData}
+          filteredData={fileteredBlogs}
+          limit={limit}
+          setLimit={setLimit}
+        />
       </div>
     </Layout>
   );

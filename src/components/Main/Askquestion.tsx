@@ -3,6 +3,8 @@ import { useAppDispatch } from "../../redux/store/store";
 import { postQuestion } from "../../redux/reducers/Main/questionSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export interface IQuestionForm {
   username: string;
@@ -20,7 +22,7 @@ const Askquestion = () => {
   const [form, setForm] = useState<IQuestionForm>({
     username: "",
     email: "",
-    phone: "(+994) 0",
+    phone: "",
     question: "",
     date: "",
   });
@@ -36,19 +38,78 @@ const Askquestion = () => {
   const sendQuestion = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (form.username.length < 10) {
-      alert("Ad və soyadınız ən azı 10 simvoldan ibarət olmalıdır!");
+    if (form.username.length < 5) {
+      toast("Ad və soyadınız ən azı 10 simvoldan ibarət olmalıdır!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: {
+          backgroundColor: "red",
+          color: "white",
+          fontFamily: "Poppins, sans-serif",
+          borderRadius: "5px",
+        },
+      });
+      return;
     }
     if (form.question.length < 50) {
-      alert("Sualınızı daha ətraflı və anlaşılan yazın!");
+      toast("Sualınızı daha ətraflı və anlaşılan yazın!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: {
+          backgroundColor: "red",
+          color: "white",
+          fontFamily: "Poppins, sans-serif",
+          borderRadius: "5px",
+        },
+      });
+      return;
     }
-    if (form.phone.length !== 17) {
-      alert("Nömrəni düzgün yazın və boşluq buraxmayın!");
+    if (form.phone.length <10) {
+      toast("Nömrəni düzgün yazın və boşluq buraxmayın!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: {
+          backgroundColor: "red",
+          color: "white",
+          fontFamily: "Poppins, sans-serif",
+          borderRadius: "5px",
+        },
+      });
+      return;
     } else {
       dispatch(postQuestion(form));
-      setMessage("Sualınız uğurla göndərilmişdir!");
+      toast("Sualınız uğurla göndərilmişdir!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        style: {
+          backgroundColor: "green",
+          color: "white",
+          fontFamily: "Poppins, sans-serif",
+          borderRadius: "5px",
+        },
+      });
       setTimeout(() => {
-        setMessage('')
+        setMessage("");
       }, 3000);
       setForm({
         username: "",
@@ -57,6 +118,7 @@ const Askquestion = () => {
         question: "",
         date: "Date",
       });
+      return;
     }
   };
 
@@ -67,6 +129,7 @@ const Askquestion = () => {
     "
       id="elaqe"
     >
+      <ToastContainer />
       {message.length > 0 && (
         <p className="fixed top-24 right-12 px-5 py-3 rounded text-white text-base z-50 bg-green-500">
           <FontAwesomeIcon icon={faCheck} className="text-xl" /> {message}
@@ -133,7 +196,7 @@ const Askquestion = () => {
           </form>
         </div>
         <iframe
-        title="the location of Pilgrim EDU MMC"
+          title="the location of Pilgrim EDU MMC"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.8558785041982!2d49.8605446!3d40.3898867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d147ebe9949%3A0xbd1a03c2dc213e11!2sLuxen%20Plaza!5e0!3m2!1sen!2saz!4v1725468099143!5m2!1sen!2saz"
           className="w-full xl:h-[800px]  lg:h-[800px]  md:h-[600px] sm:h-[600px] xl:rounded-r-xl lg:rounded-none md:rounded-none sm:rounded-none "
           allowFullScreen={true}
