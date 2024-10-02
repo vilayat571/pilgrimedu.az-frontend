@@ -18,7 +18,7 @@ export const loginFormSender = createAsyncThunk(
   async (loginForm: ILoginForm) => {
 
     console.log(loginForm)
-    const url = `http://localhost:3001/api/v1/users/login`;
+    const url = `https://pilgrimbackend.onrender.com/api/v1/users/login`;
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin

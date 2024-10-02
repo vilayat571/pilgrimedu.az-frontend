@@ -27,7 +27,7 @@ const Scholarships = () => {
   const [region, setRegion] = useState<string | null>("Hamısı");
   const [holeData, setHoleData] = useState<IScholarship[] | null>(null);
   React.useEffect(() => {
-    const url = "http://localhost:3001/api/v1/scholarships";
+    const url = "https://pilgrimbackend.onrender.com/api/v1/scholarships";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setHoleData(data.scholarships));
@@ -38,8 +38,8 @@ const Scholarships = () => {
   React.useEffect(() => {
     const url =
       region != "Hamısı"
-        ? `http://localhost:3001/api/v1/scholarships/?skip=0&limit=${limit}&type&region=${region}`
-        : `http://localhost:3001/api/v1/scholarships/?skip=0&limit=${limit}`;
+        ? `https://pilgrimbackend.onrender.com/api/v1/scholarships/?skip=0&limit=${limit}&type&region=${region}`
+        : `https://pilgrimbackend.onrender.com/api/v1/scholarships/?skip=0&limit=${limit}`;
 
     fetch(url)
       .then((res) => res.json())

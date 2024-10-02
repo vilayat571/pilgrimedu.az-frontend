@@ -8,7 +8,7 @@ const SingleBlog = () => {
 
   const { id } = useParams();
 
-  const url = `http://localhost:3001/api/v1/blogs/${id}`;
+  const url = `https://pilgrimbackend.onrender.com/api/v1/blogs/${id}`;
 
   useEffect(() => {
     fetch(url)
