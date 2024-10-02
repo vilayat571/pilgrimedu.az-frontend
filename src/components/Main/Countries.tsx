@@ -14,7 +14,7 @@ const Countries = () => {
 
   return (
     <div
-    className={`flex items-center w-full  bg-black h-auto my-16 flex-col justify-center`}
+    className={`flex items-center w-full  h-auto bg-black  my-16 flex-col justify-center`}
   >
     <div className="flex items-start justify-between w-full text-white tracking-wider">
       <p className="text-5xl">

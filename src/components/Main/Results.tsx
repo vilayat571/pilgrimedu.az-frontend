@@ -3,7 +3,7 @@ import { IImage, images } from "../../modules/imagesStudents";
 const Results = () => {
   return (
     <div 
-    data-aos="fade-left"
+    
     className="text-white py-12 px-0">
       <div
         id="telebelerimiz"

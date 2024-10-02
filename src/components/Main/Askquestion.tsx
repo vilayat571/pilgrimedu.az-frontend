@@ -14,6 +14,8 @@ export interface IQuestionForm {
   date: string;
 }
 
+export type IForm<T> = (e: T) => void;
+
 const Askquestion = () => {
   const dispatch = useAppDispatch();
 
@@ -27,15 +29,13 @@ const Askquestion = () => {
     date: "",
   });
 
-  const changeInpvalues = (
-    e:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
+  const changeInpvalues: IForm<
+    React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>
+  > = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const sendQuestion = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendQuestion: IForm<React.FormEvent<HTMLFormElement>> = (e) => {
     e.preventDefault();
 
     if (form.username.length < 5) {

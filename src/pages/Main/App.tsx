@@ -13,6 +13,11 @@ function App() {
 
   useEffect(() => {
     AOS.init();
+  }, [AOS]);
+
+
+  useEffect(() => {
+    AOS.init();
 
     if (location.hash === "#neticelerimiz") {
       const resultsSection = document.getElementById("neticelerimiz");
@@ -38,3 +43,4 @@ function App() {
 }
 
 export default App;
+
