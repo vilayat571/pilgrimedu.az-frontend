@@ -17,7 +17,7 @@ const ResetPass = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const url = `http://localhost:3001/api/v1/users/forgotPassword`;
+    const url = `https://pilgrimbackend.onrender.com/api/v1/users/forgotPassword`;
     setLoading(true);
     fetch(url, {
       method: "POST",

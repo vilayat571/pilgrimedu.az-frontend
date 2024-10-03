@@ -22,7 +22,7 @@ const NewPass = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const url = `http://localhost:3001/api/v1/users/shifreyenile/${id}`;
+    const url = `https://pilgrimbackend.onrender.com/api/v1/users/shifreyenile/${id}`;
 
     if (passForm.password.length < 7) {
       toast("Şifrənin uzunluğu 8 simvoldan az ola bilməz!", {

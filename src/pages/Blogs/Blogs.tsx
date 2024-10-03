@@ -11,11 +11,11 @@ const Blogs = () => {
   const dispatch = useAppDispatch();
   const [blogs, setBlogs] = useState<IInitialStateAllBlogs["blogs"]>(null);
   const [holeData, setHoleData] = useState<IBlog[] | null>(null); // Changed to IBlog[]
-  const [limit, setLimit] = useState<number>(2);
+  const [limit, setLimit] = useState<number>(6);
   const [query, setQuery] = useState<string>("");
 
   React.useEffect(() => {
-    const url = "http://localhost:3001/api/v1/blogs";
+    const url = "https://pilgrimbackend.onrender.com/api/v1/blogs/";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setHoleData(data.blogs)); // Assuming data.blogs is an array
