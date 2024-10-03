@@ -25,7 +25,7 @@ const initialState: IInitialStateAllBlogs = {
 export const fetchBlogs = createAsyncThunk(
   "/fetchData",
   async ({ limit }: { limit: number | undefined; }) => {
-    const url = `https://pilgrimbackend.onrender.com/api/v1/blogs/?skip=0&limit=${limit}`
+    const url = `http://localhost:3001/api/v1/blogs/?skip=0&limit=${limit}`
     console.log(limit)
 
     return fetch(url)

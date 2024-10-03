@@ -26,9 +26,10 @@ const BlogsShow: React.FC<{
                 >
                   <span className="text-white text-sm">{blog.date}</span>
                 </p>
-                <p className="text-[#fff] text-lg line-clamp-2 mt-1">
-                  {blog.body}...
-                </p>
+                <div
+                  dangerouslySetInnerHTML={{ __html: blog.body || "" }}
+                  className="text-[#fff] text-lg line-clamp-2 mt-1"
+                />
                 <Link
                   to={`/bloqlar/${blog._id}`}
                   className="text-center w-28 px-3 py-3 rounded hover:bg-white hover:text-black transition duration-200 bg-[#6F2EB6] text-[15px] text-white mt-4"
