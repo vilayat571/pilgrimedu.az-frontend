@@ -26,7 +26,7 @@ const Btnconsultasiya = () => {
         to={token ? `/istifadechihesabı` : "/daxilol"}
       >
         {token != null && <FontAwesomeIcon className="mr-2" icon={faUser} />}
-        {token != null ? user.username : "Daxil ol"}
+        {token != null ? user?.username : "Daxil ol"}
       </Link>
     </div>
   );

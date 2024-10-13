@@ -15,7 +15,7 @@ const Blogs = () => {
   const [query, setQuery] = useState<string>("");
 
   React.useEffect(() => {
-    const url = "https://pilgrimbackend.onrender.com/api/v1/blogs/";
+    const url = "http://localhost:3001/api/v1/";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setHoleData(data.blogs)); // Assuming data.blogs is an array
