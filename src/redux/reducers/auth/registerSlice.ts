@@ -16,7 +16,7 @@ export const sendRegisterForm = createAsyncThunk(
   async (form: IRegisterForm) => {
 
 
-    const url = `http://localhost:3001/api/v1/users/add`;
+    const url = `https://pilgrimedu.az/api/v1/users/add`;
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin

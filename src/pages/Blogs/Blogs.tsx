@@ -19,7 +19,7 @@ const Blogs = () => {
   const [query, setQuery] = useState<string>("");
 
   React.useEffect(() => {
-    const url = "http://localhost:3001/api/v1/blogs";
+    const url = "https://pilgrimedu.az/api/v1/blogs";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setHoleData(data.blogs)); // Assuming data.blogs is an array
