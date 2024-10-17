@@ -15,13 +15,15 @@ const IncreaseLimit: React.FC<{
         <div className="my-7"></div>
       ) : (
         <div className="w-full flex items-center justify-center mt-12">
-          <button
-            disabled={isDataExhausted}
-            onClick={() => setLimit(limit + 6)}
-            className={`rounded px-5 py-3 bg-[#7924d3] text-white`}
-          >
-            Daha çox
-          </button>
+          {!isDataExhausted && (
+            <button
+              disabled={isDataExhausted}
+              onClick={() => setLimit(limit + 6)}
+              className={`rounded px-5 py-3 bg-[#7924d3] text-white`}
+            >
+              Daha çox
+            </button>
+          )}
         </div>
       )}
     </>

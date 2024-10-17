@@ -33,35 +33,20 @@ const ResetPass = () => {
     })
       .then((res) => res.json())
       .then((payload) => {
-        if (payload.status !== "OK") {
-          toast(payload.message, {
-            position: "top-right",
-            autoClose: 2500,
-            hideProgressBar: true,
-            pauseOnHover: true,
-            progress: undefined,
-            style: {
-              backgroundColor: "red",
-              color: "white",
-              borderRadius: "3px",
-              fontFamily: "Poppins",
-            },
-          });
-        } else {
-          toast(payload.message, {
-            position: "top-right",
-            autoClose: 2500,
-            hideProgressBar: true,
-            pauseOnHover: true,
-            progress: undefined,
-            style: {
-              backgroundColor: "green",
-              color: "white",
-              borderRadius: "3px",
-              fontFamily: "Poppins",
-            },
-          });
-        }
+        console.log(payload.message);
+        toast(payload.message, {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: true,
+          pauseOnHover: true,
+          progress: undefined,
+          style: {
+            backgroundColor: payload.status == "OK" ? "green" : "red",
+            color: "white",
+            borderRadius: "3px",
+            fontFamily: "Poppins",
+          },
+        });
       })
       .then(() => setLoading(false));
   };

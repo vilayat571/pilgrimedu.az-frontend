@@ -24,7 +24,7 @@ xl:flex-row lg:flex-row md:flex-col sm:flex-col
               type="text"
               value={"@pilgrimedu.az"}
               className="h-16  text-[#0E0517] rounded placeholder:text-[#454545] indent-4  
-        border-[1px] border-[#E3E3E3] w-1/2 outline-none focus:outline-none   "
+        border-[1px] border-[#E3E3E3] xl:w-2/3 lg:w-2/3 md:w-5/6 sm:w-1/2 outline-none focus:outline-none   "
             />
             <a
               href="https://www.instagram.com/pilgrimedu_az/"

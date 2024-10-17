@@ -245,9 +245,9 @@ const Register = () => {
                 value={form.phone}
                 className="h-16 w-full text-black placeholder:text-black px-2 py-2 block  bg-white rounded 
               indent-3 tracking-wide outline-none focus:outline-none "
-                placeholder="Məsələn: 0519999999"
+                placeholder="Məsələn: 994519999999"
                 required={true}
-                type="text"
+                type="tel"
               />
             </div>
             <div className="col-span-1 flex flex-col">

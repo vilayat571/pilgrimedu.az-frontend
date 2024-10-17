@@ -16,10 +16,10 @@ const BlogsShow: React.FC<{
             >
               <img
                 src={blog.thumbnail}
-                className=" object-cover xl:w-[440px] lg:w-[440px] md:w-[440px] sm:w-[400px]  h-[300px] rounded-xl"
+                className=" object-cover xl:w-[440px] lg:w-[440px] md:w-auto sm:w-[400px]  h-[300px] rounded-xl"
                 alt={`the image of ${blog.title}`}
               />
-              <div className="flex flex-col  xl:w-[440px] lg:w-[440px] md:w-[440px] sm:w-auto   xl:px-2 md:px-4 sm:px-2 lg:px-2 h-auto ">
+              <div className="flex flex-col  xl:w-[440px] lg:w-[440px] md:w-[550px] sm:w-auto   xl:px-2 md:px-4 sm:px-2 lg:px-2 h-auto ">
                 <p
                   id="blog"
                   className=" flex items-center gap-10 mt-4 mb-2  text-[17px] text-[#fff] font-thin "

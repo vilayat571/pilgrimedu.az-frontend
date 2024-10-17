@@ -5,20 +5,11 @@ import BodyOfMain from "../../components/Main/BodyOfMain";
 import SEO from "../../modules/SEO";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 function App() {
   const location = useLocation();
 
   useEffect(() => {
-    AOS.init();
-  }, [AOS]);
-
-
-  useEffect(() => {
-    AOS.init();
-
     if (location.hash === "#neticelerimiz") {
       const resultsSection = document.getElementById("neticelerimiz");
       if (resultsSection) {
@@ -43,4 +34,3 @@ function App() {
 }
 
 export default App;
-

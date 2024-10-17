@@ -25,13 +25,7 @@ const SingleBlog = () => {
     <Layout>
       <div className="flex flex-col w-full items-center justify-center  py-12">
         <div className="flex flex-col w-4/5 pz-2 justify-center items-center">
-          <div className="flex flex-col mb-12 items-start w-full ">
-            <button
-              className="text-[17px] mb-4 text-white mt-6"
-              onClick={() => navigate(-1)}
-            >
-              {"<"} Geri dönün
-            </button>
+          <div className="flex flex-col w-full mb-12 items-start ">
             <p
               id="blog"
               className="text-[18px] text-[#fff] mb-2 mt-4 flex items-center gap-4 "
@@ -42,7 +36,7 @@ const SingleBlog = () => {
             <p className="text-3xl text-[#fff] ">{newBlog?.title}</p>
           </div>
 
-          <div>
+          <div className="w-full">
             <img
               src={newBlog?.thumbnail}
               className=" rounded-md object-cover w-full h-auto"

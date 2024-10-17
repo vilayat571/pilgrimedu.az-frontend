@@ -3,12 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { homeHrefs, pagesRefs } from "../../../modules/navrefs";
 import { services } from "../../../modules/services";
 import ToTop from "../../../atoms/Footer/ToTop";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Foot() {
   return (
     <main className="flex-col bg-[#010101] text-white gradient">
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 gap-y-16 sm:grid-cols-1 lg:grid-cols-3 mt-16">
+      <div className="grid xl:grid-cols-3 md:grid-cols-1 gap-y-16 sm:grid-cols-1 lg:grid-cols-3 mt-16">
         <div className="flex xl:justify-start lg:justify-start md:justify-start sm:justify-start items-start">
           <div>
             <p className="text-xl font-semibold mb-6">
@@ -29,6 +34,27 @@ function Foot() {
               />
               <span>info@pilgrimedu.az</span>
             </p>
+            <div className="flex flex-row mt-6 gap-2 items-center">
+              <NavLink to={'https://www.instagram.com/pilgrimedu_az/'} className=" flex flex-row items-center cursor-pointer mb-4 gap-3">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="bg-[#6F2EB5] text-[#FFF] p-4  text-xl rounded-full"
+                />
+              </NavLink>
+              <NavLink to={'https://www.facebook.com/pilgrimedu.az/'} className=" flex flex-row items-center cursor-pointer mb-4 gap-3">
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  className="bg-[#6F2EB5] text-[#FFF] p-4  text-xl rounded-full"
+                />
+              </NavLink>
+
+              <NavLink to={'https://www.linkedin.com/company/pilgrimeducation/'} className=" flex flex-row items-center cursor-pointer mb-4 gap-3">
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="bg-[#6F2EB5] text-[#FFF] p-4  text-xl rounded-full"
+                />
+              </NavLink>
+            </div>
           </div>
         </div>
 
