@@ -19,6 +19,7 @@ const ResetPass = () => {
     e.preventDefault();
     const url = `https://pilgrimedu.az/api/v1/users/forgotPassword`;
     setLoading(true);
+  
     fetch(url, {
       method: "POST",
       mode: "cors",
@@ -33,7 +34,6 @@ const ResetPass = () => {
     })
       .then((res) => res.json())
       .then((payload) => {
-        console.log(payload.message);
         toast(payload.message, {
           position: "top-right",
           autoClose: 2500,
@@ -41,15 +41,31 @@ const ResetPass = () => {
           pauseOnHover: true,
           progress: undefined,
           style: {
-            backgroundColor: payload.status == "OK" ? "green" : "red",
+            backgroundColor: payload.status === "OK" ? "green" : "red",
             color: "white",
             borderRadius: "3px",
             fontFamily: "Poppins",
           },
         });
       })
-      .then(() => setLoading(false));
+      .catch((error) => {
+        console.error("Error occurred:", error);
+        toast("Something went wrong. Please try again.", {
+          position: "top-right",
+          autoClose: 2500,
+          hideProgressBar: true,
+          pauseOnHover: true,
+          style: {
+            backgroundColor: "red",
+            color: "white",
+            borderRadius: "3px",
+            fontFamily: "Poppins",
+          },
+        });
+      })
+      .finally(() => setLoading(false)); // Ensures loading state is reset whether request succeeds or fails
   };
+  
 
   return (
     <div
