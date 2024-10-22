@@ -23,6 +23,8 @@ const Blogs = () => {
     dispatch(fetchBlogs({ limit })).then((data) =>
       setBlogs(data.payload.blogs)
     );
+    setHoleData(null)
+  
   }, [limit, dispatch, query]);
 
   const filteredBlogs = blogs?.filter((blog: IBlog) =>
