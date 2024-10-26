@@ -36,7 +36,7 @@ const registerSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(sendRegisterForm.fulfilled, (state, action) => {
+    builder.addCase(sendRegisterForm.fulfilled, (state) => {
       state.loading = false;
       state.error = null;
     });

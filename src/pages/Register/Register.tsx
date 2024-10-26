@@ -65,11 +65,7 @@ const Register = () => {
     status: "Qeydiyyatdan keçdi",
   });
 
-  const validatePhoneNumber = (number: string) => {
-    const regex =
-      /^(?:0|994)(?:12|51|50|55|70|77)[^\w]{0,2}[2-9][0-9]{2}[^\w]{0,2}[0-9]{2}[^\w]{0,2}[0-9]{2}$/;
-    return regex.test(number);
-  };
+
 
   const handleChange = (
     e:

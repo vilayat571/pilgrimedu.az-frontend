@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Loqo from "../../../atoms/Layout/Loqo";
 import { IIHrefs } from "../../../modules/navrefs";
-import { Link } from "react-router-dom";
 import { services } from "../../../modules/services";
 import Btnconsultasiya from "../../../atoms/Layout/Btnconsultasiya";
 
