@@ -19,7 +19,6 @@ const SingleBlog = () => {
   const navigate = useNavigate();
 
 
-  console.log(newBlog?.thumbnail)
 
   return (
     <Layout>

@@ -13,34 +13,53 @@ const PopupScholarships: React.FC<{
           data != null ? styles.open : styles.close
         } flex items-center justify-center`}
     >
-      <div className="bg-white w-auto h-auto mx-6 gap-y-2 flex flex-col rounded px-10 py-10 ">
-        <p className="text-lg">
-          <span className="font-black">Adı : </span>
-          {data?.name}
+      <div
+        className="bg-white xl:w-auto lg:w-auto md:w-auto sm:w-full h-auto 
+     xl:mx-6 lg:mx-6 md:mx-6 sm:mx-0  gap-y-2 flex flex-col rounded 
+     xl:px-10 lg:px-10 md:px-10 sm:px-4
+      xl:py-10 lg:py-10 md:py-10 sm:py-4
+"
+      >
+        <p className="mb-3">
+          <span className="font-black bg-black text-white px-2 py-2 text-sm  inline-block rounded  ">
+            Təqad:
+          </span>
+          <p className="w-full px-2 mt-2 text-left">{data?.name}</p>
         </p>
-        <p>
-          <span className="font-black">Ölkə : </span>
-          {data?.country}, {data?.region}
+        <p className="mt-2">
+          <span className="font-black bg-black text-white px-2 py-2 text-sm  inline-block rounded  ">
+            Ölkə:
+          </span>
+          <p className="w-full px-2 mt-2 text-left">{data?.region}</p>
         </p>
-        <p>
-          <span className="font-black">Tipi : </span>
-          {data?.type}
+        <p className="mt-2">
+          <span className="font-black bg-black text-white px-2 py-2 text-sm  inline-block rounded  ">
+            Tipi:
+          </span>
+          <p className="w-full px-2 mt-2 text-left">{data?.type}</p>
         </p>
-        <p className="flex">
-          <span className="font-black ">Haqqında : </span>
-          {data?.description}
+        <p className="mt-2">
+          <span className="font-black bg-black text-white px-2 py-2 text-sm  inline-block rounded  ">
+            Haqqında:
+          </span>
+          <p className="w-full px-2 mt-2 text-left">{data?.description}</p>
         </p>
-        <p>
-          <span className="font-black">Təhsil pilləsi : </span>
-          {data?.degree}
+        <p className="mt-2">
+          <span className="font-black bg-black text-white px-2 py-2 text-sm  inline-block rounded  ">
+            Təhsil pilləsi:
+          </span>
+          <p className="w-full px-2 mt-2 text-left">{data?.degree}</p>
         </p>
-        <p>
-          <span className="font-black">Son müraciət tarixi : </span>
-          {data?.deadline}
+        <p className="mt-2">
+          <span className="font-black bg-black text-white px-2 py-2 text-sm  inline-block rounded  ">
+            Son müraciət tarixi:
+          </span>
+          <p className="w-full px-2 mt-2 text-left">{data?.deadline}</p>
         </p>
+
         <button
           onClick={() => setData(null)}
-          className=" px-4 w-20 py-3 mt-3 bg-[#8515ff] text-white rounded text-sm hover:bg-white hover:text-black transition duration-200"
+          className=" px-5 w-20 py-3 mt-3 border-[1px]  hover:text-white rounded text-sm hover:bg-black bg-white text-black transition duration-200"
         >
           Bağla
         </button>

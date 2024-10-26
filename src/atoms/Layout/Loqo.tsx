@@ -19,7 +19,7 @@ const Loqo = () => {
       role="logo"
     >
       <img
-        className="w-48"
+        className="xl:w-48 lg:w-40 sm:w-40 md:w-40"
         src={logoUrl}
         alt="The logo of Pilgrim MMC"
       />

@@ -5,7 +5,7 @@ export interface IBlog {
   thumbnail: string;
   title: string;
   date: string;
-  body:  string;
+  body: string;
   description: string;
   author: string;
 }
@@ -24,9 +24,8 @@ const initialState: IInitialStateAllBlogs = {
 
 export const fetchBlogs = createAsyncThunk(
   "/fetchData",
-  async ({ limit }: { limit: number | undefined; }) => {
-    const url = `https://pilgrimedu.az/api/v1/blogs/?skip=0&limit=${limit}`
-    console.log(limit)
+  async ({ limit }: { limit: number | undefined }) => {
+    const url = `https://pilgrimedu.az/api/v1/blogs/?skip=0&limit=${limit}`;
 
     return fetch(url)
       .then((res) => res.json())
@@ -49,11 +48,11 @@ const getAllBlogs = createSlice({
         state.loading = false;
         state.error = null;
       }),
-    builder.addCase(fetchBlogs.rejected, (state) => {
-      state.blogs = null;
-      state.loading = true;
-      state.error = "there is an error";
-    });
+      builder.addCase(fetchBlogs.rejected, (state) => {
+        state.blogs = null;
+        state.loading = true;
+        state.error = "there is an error";
+      });
   },
 });
 export default getAllBlogs.reducer;

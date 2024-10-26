@@ -41,7 +41,6 @@ const registerSlice = createSlice({
     builder.addCase(sendRegisterForm.fulfilled, (state, action) => {
       state.loading = false;
       state.error = null;
-      console.log(action.payload);
     });
   },
 });

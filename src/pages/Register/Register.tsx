@@ -115,7 +115,7 @@ const Register = () => {
           fontFamily: "Poppins",
         },
       });
-    } else if (!validatePhoneNumber(form.phone)) {
+    } else if (form.phone.length<9) {
       toast("Uyğunsuz nömrə!", {
         position: "top-right",
         autoClose: 2500,
@@ -171,7 +171,7 @@ const Register = () => {
               status: "Qeydiyyatdan keçdi",
             });
             navigate("/daxilol");
-          }, 2000);
+          },500);
       });
     }
   };

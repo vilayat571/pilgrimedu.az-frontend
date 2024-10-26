@@ -7,11 +7,9 @@ import ServicesContext from "./ServicesContext";
 const Services = () => {
   const [data, setData] = useState<IService | null>(null);
 
+  
   return (
     <motion.div
-      initial={{ x: -100 }}
-      animate={{ x: 0 }}
-      transition={{ type: "spring", stiffness: 100 }}
     >
       <ServicesContext data={data} setData={setData} />
       <ServicesImg />

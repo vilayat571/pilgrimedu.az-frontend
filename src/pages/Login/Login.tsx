@@ -104,7 +104,7 @@ const Login = () => {
           setLoginForm({ email: "", password: "" });
           setTimeout(() => {
             navigate("/");
-          }, 2000);
+          }, 500);
           return;
         } else {
           toast(ans.payload.message, {

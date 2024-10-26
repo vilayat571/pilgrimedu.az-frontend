@@ -33,7 +33,6 @@ const Scholarships = () => {
       .then((data) => setHoleData(data.scholarships));
   }, [setHoleData]);
 
-  console.log(holeData)
 
   React.useEffect(() => {
     const url =

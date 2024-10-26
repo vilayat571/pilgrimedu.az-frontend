@@ -17,7 +17,6 @@ export const loginFormSender = createAsyncThunk(
   "/loginFormSender",
   async (loginForm: ILoginForm) => {
 
-    console.log(loginForm)
     const url = `https://pilgrimedu.az/api/v1/users/login`;
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.

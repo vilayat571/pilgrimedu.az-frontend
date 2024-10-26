@@ -97,7 +97,7 @@ function Foot() {
               {services.map((service) => (
                 <a
                   aria-label="Pilgrim EDU MMC xidmətinə aparan link"
-                  href="#xidmetlerimiz"
+                  href="/#xidmetlerimiz"
                   key={service.id}
                   className="block hover:underline"
                 >

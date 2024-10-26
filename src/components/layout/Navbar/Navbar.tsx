@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <div
       id="nav"
-      className="w-full sticky top-0 z-50 gradient flex justify-center bg-[#210442] items-center"
+      className="w-full sticky top-0 z-10 gradient flex justify-center bg-[#210442] items-center"
     >
       <div
         className="flex gradient3 flex-row xl:w-4/5 lg:w-full md:w-full sm:w-full
@@ -37,7 +37,7 @@ function Navbar() {
         <div
           className="
         xl:flex lg:flex md:hidden sm:hidden
-      flex-row gap-2 text-base tracking-wide"
+      flex-row text-base tracking-wide"
         >
           {hrefs.map((link: IIHrefs, index) =>
             hrefs.length > 3 ? (
@@ -63,7 +63,7 @@ function Navbar() {
         </div>
 
         <div
-          className=" flex-row gap-5 text-[15px]         
+          className=" flex-row text-sm       
       xl:flex lg:flex md:hidden sm:hidden
 "
         >
