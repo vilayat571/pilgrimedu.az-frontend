@@ -15,7 +15,7 @@ const Blogs = () => {
   const dispatch = useAppDispatch();
   const [blogs, setBlogs] = useState<IInitialStateAllBlogs["blogs"]>(null);
   const [holeData, setHoleData] = useState<IBlog[] | null>(null); // Changed to IBlog[]
-  const [limit, setLimit] = useState<number>(3);
+  const [limit, setLimit] = useState<number>(6);
   const [query, setQuery] = useState<string>("");
 
 
@@ -49,14 +49,14 @@ const Blogs = () => {
                 <span className="text-[#fff] text-3xl block">
                   Üzür istəyirik
                 </span>
-                <span className="text-[#8D8D8D] text-3xl block">
+                <span className="text-[#fff] text-3xl block">
                   axtarışa uyğun nəticə tapılmadı!
                 </span>
                 <button
                   className="text-black bg-[#fff] text-base px-6 rounded py-3 mt-3"
                   onClick={() => setQuery("")}
                 >
-                  Yenilə
+                  Axtarışı sıfırla
                 </button>
               </p>
             ) : (

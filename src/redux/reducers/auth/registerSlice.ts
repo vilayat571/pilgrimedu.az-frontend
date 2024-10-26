@@ -14,8 +14,6 @@ const initialState: IinitialStateOfRegister = {
 export const sendRegisterForm = createAsyncThunk(
   "/sendRegisterForm",
   async (form: IRegisterForm) => {
-
-
     const url = `https://pilgrimedu.az/api/v1/users/add`;
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.

@@ -33,7 +33,6 @@ const Scholarships = () => {
       .then((data) => setHoleData(data.scholarships));
   }, [setHoleData]);
 
-
   React.useEffect(() => {
     const url =
       region != "Hamısı"
@@ -72,6 +71,18 @@ const Scholarships = () => {
         <SearchInput query={query} setQuery={setQuery} />
         <Options filterData={filterData} />
         <ShowScholarships data={filteredScholarships} setData={setData} />
+        {filteredScholarships?.length == 0 && (
+          <div className="text-3xl text-center text-white">
+            Üzür istəyirik, <br /> axtarışa uyğun nəticə tapılmadı
+            <br />
+            <button
+              className="text-black bg-[#fff] text-base px-6 rounded py-3 mt-3"
+              onClick={() => setQuery("")}
+            >
+              Axtarışı sıfırla
+            </button>
+          </div>
+        )}
         <IncreaeLimit
           holeData={holeData}
           filteredData={filteredScholarships}

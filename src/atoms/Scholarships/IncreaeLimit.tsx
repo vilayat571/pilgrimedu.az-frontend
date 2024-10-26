@@ -11,7 +11,7 @@ const IncreaseLimit: React.FC<{
 
   return (
     <>
-      {isDataExhausted ? (
+      {isDataExhausted || filteredData?.length==0 ? (
         <div className="my-7"></div>
       ) : (
         <div className="w-full flex items-center justify-center mt-12">
