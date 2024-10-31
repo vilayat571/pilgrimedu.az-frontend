@@ -24,7 +24,7 @@ const NewPass = () => {
     e.preventDefault();
     const url = `https://pilgrimedu.az/api/v1/users/shifreyenile/${id}`;
 
-    if (passForm.password.length < 7) {
+    if (passForm.password.length >= 8) {
       toast("Şifrənin uzunluğu 8 simvoldan az ola bilməz!", {
         position: "top-right",
         autoClose: 2500,
