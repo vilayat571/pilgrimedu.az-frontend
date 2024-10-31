@@ -3,13 +3,12 @@ import Sidebar from "./Sidebar";
 import Loqo from "../../../atoms/Layout/Loqo";
 import { homeHrefs, IIHrefs, pagesRefs } from "../../../modules/navrefs";
 import Btnconsultasiya from "../../../atoms/Layout/Btnconsultasiya";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Navbardetail from "./Navbardetail";
 
 function Navbar() {
   const [mode, setMode] = useState<boolean>(false);
-
   const { pathname } = useLocation();
-
   const [hrefs, setHrefs] = useState<IIHrefs[]>(homeHrefs);
 
   useEffect(() => {
@@ -31,41 +30,11 @@ function Navbar() {
       py-4 "
       >
         <Loqo />
-
         <Sidebar hrefs={hrefs} mode={mode} setMode={setMode} />
-
+        <Navbardetail hrefs={hrefs} />
         <div
-          className="
-        xl:flex lg:flex md:hidden sm:hidden
-      flex-row text-base tracking-wide"
-        >
-          {hrefs.map((link: IIHrefs, index) =>
-            hrefs.length > 3 ? (
-              <a
-                key={index}
-                aria-label="The ancor tag to redirect Whatsapp account of Pilgrim MMC"
-                className="text-white hover:bg-white hover:text-black transition duration-200 px-4 py-2 rounded"
-                href={link.hrefs}
-              >
-                {link.text}
-              </a>
-            ) : (
-              <Link
-                key={index}
-                aria-label="The ancor tag to redirect Whatsapp account of Pilgrim MMC"
-                className="text-white hover:bg-white hover:text-black transition duration-200 px-4 py-2 rounded"
-                to={link.hrefs}
-              >
-                {link.text}
-              </Link>
-            )
-          )}
-        </div>
-
-        <div
-          className=" flex-row text-sm       
-      xl:flex lg:flex md:hidden sm:hidden
-"
+          className="flex-row text-sm       
+      xl:flex lg:flex md:hidden sm:hidden"
         >
           <Btnconsultasiya />
         </div>

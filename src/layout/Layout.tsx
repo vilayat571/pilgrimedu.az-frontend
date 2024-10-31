@@ -26,7 +26,7 @@ const Layout: React.FC<ILayout> = ({ children }) => {
     >
       {loading ? (
         <div className="flex justify-center items-center w-full h-screen">
-          Loading
+          <div className="text-center text-3xl">Məlumatlar yüklənir..</div>
         </div>
       ) : (
         <div className="tracking-wide flex flex-col items-center">

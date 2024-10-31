@@ -37,8 +37,7 @@ const FAAQ = () => {
 
         <div
           id="faq"
-          className=" mt-16 outline-none col-span-1 rounded-r-xl
-        "
+          className=" mt-16 outline-none col-span-1 rounded-r-xl"
         >
           <div>
             {data.map((item: IFAAQ) => {

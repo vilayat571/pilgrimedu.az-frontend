@@ -122,10 +122,7 @@ const Askquestion = () => {
   };
 
   return (
-    <div
-      className="flex justify-center items-center mb-16"
-      id="elaqe"
-    >
+    <div className="flex justify-center items-center mb-16" id="elaqe">
       <ToastContainer />
       {message.length > 0 && (
         <p className="fixed top-24 right-12 px-5 py-3 rounded text-white text-base z-50 bg-green-500">
