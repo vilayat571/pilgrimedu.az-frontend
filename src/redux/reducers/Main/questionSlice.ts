@@ -10,7 +10,7 @@ export interface IinitialState {
 export const postQuestion = createAsyncThunk(
   "/postQuestion",
   async (data: IQuestionForm) => {
-    const url = `${import.meta.env.VITE_API_URL}/users/add}/questions/add`;
+    const url = `${import.meta.env.VITE_API_URL}/questions/add`;
 
     const response = await fetch(url, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
