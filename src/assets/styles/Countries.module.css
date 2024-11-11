@@ -4,6 +4,7 @@
   border-style: solid;
   border-image: linear-gradient(to right, #1100ff, #0008ff) 1;
   animation: borderGradientAnimation2 1s ease infinite;
+  z-index: 10;
 }
 
 .gradient2 {

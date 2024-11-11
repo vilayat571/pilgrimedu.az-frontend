@@ -23,12 +23,12 @@ const FAAQ = () => {
       flex justify-between  items-center py-20  bg-[#000]"
     >
       <div className="grid xl:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1  w-full ">
-        <div className="col-span-1 xl:pl-0 md:pl-12 sm:pl-12 lg:pl-0">
-          <p className="flex flex-col text-4xl font-semibold mb-8">
-            <span className="text-[#fff]"> Tez-tez verilən</span>
-            <span className="text-[#8516FF]">sualların cavabları!</span>
+        <div className="col-span-1 w-full xl:pl-0 md:pl-12 sm:pl-0 lg:pl-0">
+          <p className="flex flex-col xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl w-full font-semibold mb-8">
+            <span className="w-full text-[#fff]"> Tez-tez verilən</span>
+            <span className="w-full text-[#8516FF]">sualların cavabları!</span>
           </p>
-          <p className=" w-3/4 relative text-white bottom-4 font-thin text-[15px] ">
+          <p className=" xl:w-3/4 lg:w-3/4 md:w-3/4 sm:w-full relative text-white bottom-4 font-thin text-[15px] ">
             Əgər sizdə konsultasiyaya gəlməmişdən əvvəl bizim haqqımızda ətraflı
             məlumata sahib olmaq istəyirsinizsə o zaman suallara göz gəzdirin :)
           </p>
@@ -50,10 +50,10 @@ const FAAQ = () => {
                   text-left w-full bg-white  mb-2"
                 >
                   <div className="flex flex-row items-center justify-between w-full">
-                    <span> {item.title} </span>
+                    <span className="w-[90%]"> {item.title} </span>
 
-                  <button className="bg-black group-hover:bg-white text-white group-hover:text-black w-9 h-9 
-                  transition duration-300 text-xl rounded-full">
+                  <button className="bg-black group-hover:bg-white text-white group-hover:text-black flex w-9 h-9 
+                  transition duration-300 text-xl rounded-full justify-center items-center ">
                 {!item.status ? '+' : '-'}
                   </button>
                   </div>

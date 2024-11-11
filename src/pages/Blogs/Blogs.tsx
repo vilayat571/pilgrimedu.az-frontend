@@ -15,7 +15,7 @@ const Blogs = () => {
   const dispatch = useAppDispatch();
   const [blogs, setBlogs] = useState<IInitialStateAllBlogs["blogs"]>(null);
   const [holeData, setHoleData] = useState<IBlog[] | null>(null); // Changed to IBlog[]
-  const [limit, setLimit] = useState<number>(6);
+  const [limit, setLimit] = useState<number>(1);
   const [query, setQuery] = useState<string>("");
 
 

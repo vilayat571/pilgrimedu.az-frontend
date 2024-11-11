@@ -8,7 +8,7 @@ const ServicesMap = ({
   setData: React.Dispatch<React.SetStateAction<IService | null>>;
 }) => {
   return (
-    <div className="flex w-full flex-col py-24   ">
+    <div className="flex w-full flex-col py-24 xl:px-0 lg:px-0 md:px-4 sm:px-6   ">
       <div className="text-left w-full">
         <p className="text-white text-lg">Xidmətlərimiz</p>
         <p className="text-white text-3xl mt-3">Asanlıqla xaricdə təhsil</p>

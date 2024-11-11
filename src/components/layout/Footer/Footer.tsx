@@ -10,7 +10,7 @@ function Footer() {
   const { pathname } = useLocation();
 
   return (
-    <div className="flex bg-[#000] items-center justify-center flex-col">
+    <div className="flex bg-[#000] items-center justify-center xl:px-0 lg:px-0 md:px-0 sm:px-3 flex-col">
       {pathname != "/bloqlar" && <Threeblogs />}
       <FooterLayout>
         <FAAQ />

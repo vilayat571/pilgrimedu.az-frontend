@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store/store.ts";
 import { HelmetProvider } from "react-helmet-async";
 import MainPage from "./pages/Dashboard/MainPage.tsx";
+import Notfound from "./pages/Login/Notfound.tsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/shifreyenile" element={<ResetPass />} />
           <Route path="/shifreyenile/:id" element={<NewPass />} />
           <Route path={`/istifadechihesabı`} element={<MainPage />} />
+          <Route path={`*`} element={<Notfound />} />
         </Routes>
       </BrowserRouter>
     </Provider>

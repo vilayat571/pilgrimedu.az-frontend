@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Navbar from "../components/layout/Navbar/Navbar";
 import Footer from "../components/layout/Footer/Footer";
 import { motion } from "framer-motion";
-import Scroll from "../components/layout/Scroll";
 
 interface ILayout {
   children: React.ReactNode;
@@ -30,7 +29,6 @@ const Layout: React.FC<ILayout> = ({ children }) => {
         </div>
       ) : (
         <div className="tracking-wide flex flex-col items-center">
-          <Scroll />
           <Navbar />
           {children}
           <Footer />

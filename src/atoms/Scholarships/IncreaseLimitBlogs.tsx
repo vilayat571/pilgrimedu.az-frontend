@@ -15,7 +15,7 @@ const IncreaseLimit: React.FC<{
         <div className="my-7"></div>
       ) : (
         <div className="w-full flex items-center justify-center mt-12">
-          {!isDataExhausted || filteredData?.length!=0  && (
+          {!isDataExhausted && filteredData?.length!=0  && (
             <button
               disabled={isDataExhausted}
               onClick={() => setLimit(limit + 6)}

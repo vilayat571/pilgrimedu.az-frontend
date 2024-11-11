@@ -12,10 +12,11 @@ const BlogsShow: React.FC<{ blogs: IBlog[] | null | undefined }> = ({ blogs }) =
             className="text-white col-span-1 flex items-center justify-center flex-col"
           >
             <img
-              src={`https://pilgrimedu.az/medias/${blog.thumbnail}`} // `item.thumbnail` -> `blog.thumbnail`
+              src={`https://pilgrimedu.az/medias/${blog.thumbnail}`} 
               className="object-cover xl:w-[440px] lg:w-[440px] md:w-auto sm:w-[400px] h-[300px] rounded-xl"
               alt={`The image of ${blog.title}`} // `alt` atributu yaxşı şəkildə doldurulub
             />
+            {blog.thumbnail}
             <div className="flex flex-col xl:w-[440px] lg:w-[440px] md:w-[550px] sm:w-auto xl:px-2 md:px-4 sm:px-2 lg:px-2 h-auto">
               <p
                 id="blog"
