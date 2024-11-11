@@ -10,23 +10,32 @@ export interface IinitialState {
 export const postQuestion = createAsyncThunk(
   "/postQuestion",
   async (data: IQuestionForm) => {
-    const url = `${import.meta.env.VITE_API_URL}/questions/add`;
-
-    const response = await fetch(url, {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-      },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
-    return response.json();
+    const url = `https://pilgrimedu.az/api/v1/questions/add`;
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Error:", errorData); // Log server response
+        throw new Error(`Server error: ${errorData.message || "Conflict"}`);
+      }
+      return response.json();
+    } catch (error) {
+      console.error("Error during post request:");
+      throw error;
+    }
   }
-);
+)  
 
 const initialState: IinitialState = {
   question: "",

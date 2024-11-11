@@ -25,7 +25,7 @@ const Askquestion = () => {
     email: "",
     phone: "",
     question: "",
-    date: "",
+    date: "deded",
   });
 
   const changeInpvalues: IForm<
