@@ -21,9 +21,12 @@ const BlogsShow: React.FC<{ blogs: IBlog[] | null | undefined }> = ({ blogs }) =
                 id="blog"
                 className="flex items-center gap-10 mt-4 mb-2 text-[17px] text-[#fff] font-thin"
               >
-                <span className="text-white text-sm">{blog.date}</span>
+                <span className="text-white mt-1 text-sm">{blog.date}</span>
               </p>
-              <p className="line-clamp-2 text-xl">{blog.description}</p>
+              <p className="line-clamp-2 mt-2 text-xl">{blog.description}</p>
+              <p 
+              dangerouslySetInnerHTML={{__html:blog.body}}
+              className="line-clamp-3 text-lg mt-2" />
               <Link
                 to={`/bloqlar/${blog._id}`} // blog._id ilə dinamik olaraq getmək
                 className="text-center w-28 px-3 py-3 rounded hover:bg-white hover:text-black transition duration-200 bg-[#6F2EB6] text-[15px] text-white mt-4"
