@@ -24,31 +24,31 @@ const SingleBlog = () => {
     <Layout>
       <div className="flex flex-col w-full bg-[#16022C] items-center justify-center  py-12">
         <div className="flex flex-col w-4/5 pz-2 justify-center items-center">
-          <div className="flex flex-col w-full mb-12 items-start ">
+          <div className="flex flex-col w-full mb-6 mt-8 items-start ">
             <p
               id="blog"
               className="text-sm text-[#fff] mb-2 mt-4 flex items-center gap-4 "
             >
               <span>{newBlog?.date}</span>
             </p>
-            <p className="text-3xl text-[#fff] ">{newBlog?.title}</p>
+            <p  id="formDiv" className="text-3xl text-[#fff] ">{newBlog?.title}</p>
           </div>
 
-          <div className="w-full">
+          <div id="formDiv" className="w-full">
             <img
               src={`https://pilgrimedu.az/medias/${newBlog?.thumbnail}`} 
               className=" rounded-md object-cover w-full h-auto"
               alt={`the thumbnail of blog about ${newBlog?.title}`}
             />
 
-            <p className="text-xl w-4/5 mt-12 mb-4 text-justify text-white">{newBlog?.description}</p>
+            <p className="text-2xl w-4/5 mt-12 mb-4 text-justify text-white px-3">{newBlog?.description}</p>
 
             <div
               dangerouslySetInnerHTML={{ __html: newBlog?.body || "" }}
-              className=" text-[#fff] text-justify"
+              className=" text-[#fff] text-justify px-3"
             />
 
-            <div className="flex items-start mt-12 ">
+            <div className="flex items-start mt-5 ">
               <button
                 className="text-[17px] mb-4  bg-[#6F2EB6] rounded text-[#d8d7d7] px-6 py-3"
                 onClick={() => navigate(-1)}

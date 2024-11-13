@@ -16,7 +16,6 @@ const BlogsShow: React.FC<{ blogs: IBlog[] | null | undefined }> = ({ blogs }) =
               className="object-cover xl:w-[440px] lg:w-[440px] md:w-auto sm:w-[400px] h-[300px] rounded-xl"
               alt={`The image of ${blog.title}`} // `alt` atributu yaxşı şəkildə doldurulub
             />
-            {blog.thumbnail}
             <div className="flex flex-col xl:w-[440px] lg:w-[440px] md:w-[550px] sm:w-auto xl:px-2 md:px-4 sm:px-2 lg:px-2 h-auto">
               <p
                 id="blog"
@@ -24,7 +23,7 @@ const BlogsShow: React.FC<{ blogs: IBlog[] | null | undefined }> = ({ blogs }) =
               >
                 <span className="text-white text-sm">{blog.date}</span>
               </p>
-              <p className="line-clamp-2">{blog.description}</p>
+              <p className="line-clamp-2 text-xl">{blog.description}</p>
               <Link
                 to={`/bloqlar/${blog._id}`} // blog._id ilə dinamik olaraq getmək
                 className="text-center w-28 px-3 py-3 rounded hover:bg-white hover:text-black transition duration-200 bg-[#6F2EB6] text-[15px] text-white mt-4"
