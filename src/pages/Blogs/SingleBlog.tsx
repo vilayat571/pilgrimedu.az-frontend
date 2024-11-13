@@ -23,7 +23,7 @@ const SingleBlog = () => {
   return (
     <Layout>
       <div className="flex flex-col w-full bg-[#16022C] items-center justify-center  py-12">
-        <div className="flex flex-col w-4/5 pz-2 justify-center items-center">
+        <div className="flex flex-col xl:w-4/5 lg:w-4/5 md:w-5/6 sm:w-[94%] pz-2 justify-center items-center">
           <div className="flex flex-col w-full mb-6 mt-8 items-start ">
             <p
               id="blog"
@@ -41,7 +41,7 @@ const SingleBlog = () => {
               alt={`the thumbnail of blog about ${newBlog?.title}`}
             />
 
-            <p className="text-2xl w-4/5 mt-12 mb-4 text-justify text-white px-3">{newBlog?.description}</p>
+            <p className="text-2xl xl:w-4/5 lg:w-4/5 md:w-5/6 sm:w-[94%] mt-12 mb-4 text-justify text-white px-3">{newBlog?.description}</p>
 
             <div
               dangerouslySetInnerHTML={{ __html: newBlog?.body || "" }}
